@@ -129,7 +129,7 @@ function ProjectCard({ project, index, visible, onImageClick }: {
           {gallery.map((img, i) => (
             <button key={i} onClick={() => onImageClick(img)}
               className="flex-1 overflow-hidden rounded-md transition-all duration-200 hover:opacity-80 hover:ring-1"
-              style={{ height: "48px", border: "1px solid rgba(18,45,92,0.6)", ringColor: "#00c8b4" }}>
+              style={{ height: "48px", border: "1px solid rgba(18,45,92,0.6)" }}>
               <img src={img} alt={`Gallery ${i + 1}`}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </button>

@@ -1,12 +1,12 @@
 {
   "site": {
-    "title": "Gerald Gumahad — SEO & Data Analyst",
+    "title": "Gerald M. Gumahad — SEO & Data Analyst",
     "description": "Chemical Engineer turned SEO Assistant and Data Analyst. Turning data into rankings and insights into action.",
     "url": "https://geraldgumahad.vercel.app",
     "ogImage": "/images/og-image.png"
   },
   "hero": {
-    "name": "Gerald Gumahad",
+    "name": "Gerald M. Gumahad",
     "title": "SEO Assistant · Data Analyst",
     "tagline": "Turning raw data into rankings — and insights into action.",
     "cta": {
@@ -117,7 +117,7 @@
       "github": null,
       "download": null,
       "downloadLabel": null,
-      "external": "https://www.kaggle.com/geraldmgumahad",
+      "external": "https://www.kaggle.com/ggumahad17",
       "externalLabel": "View on Kaggle",
       "featured": true
     },
@@ -132,8 +132,8 @@
       "github": null,
       "download": null,
       "downloadLabel": null,
-      "external": null,
-      "externalLabel": null,
+      "external": "https://docs.google.com/document/d/1_-fSX5XkSrcKsTRH3scKEESiFbvfS7PPHGvsIjten2Q/edit?tab=t.0",
+      "externalLabel": "View Full SEO Audit Report",
       "featured": false
     },
     {
@@ -165,11 +165,74 @@
       "external": null,
       "externalLabel": null,
       "featured": true
+    },
+    {
+      "id": 7,
+      "title": "Canva Design — Streamline Aluminium",
+      "description": "Created a professional marketing graphic for Streamline, an aluminium panel supplier in Sydney. Designed to target builders and developers with clear product specs, brand colours, and a strong call to action.",
+      "tags": ["Canva", "Graphic Design", "Marketing", "Social Media"],
+      "category": "Design",
+      "image": "/images/projects/canva-design-2.png",
+      "live": null,
+      "github": null,
+      "download": null,
+      "downloadLabel": null,
+      "external": null,
+      "externalLabel": null,
+      "featured": true
+    },
+    {
+      "id": 8,
+      "title": "Growth Orbit Internship — Al Saudia SEO",
+      "description": "Backlinking and keyword research for alsaudiatibbifoundation.pk as part of my SEO internship at Growth Orbit Marketing Agency. Domain achieved Authority Score 10, 589 organic traffic, 111 organic keywords, and 65 backlinks tracked via Semrush.",
+      "tags": ["Backlinking", "Keyword Research", "Semrush", "Off-Page SEO"],
+      "category": "SEO",
+      "image": "/images/projects/al-saudia-domain-overview.png",
+      "gallery": [
+        "/images/projects/al-saudia-domain-overview.png",
+        "/images/projects/al-saudia-keywords.png",
+        "/images/projects/al-saudia-backlink.png"
+      ],
+      "live": "https://www.alsaudiatibbifoundation.pk/",
+      "github": null,
+      "download": null,
+      "downloadLabel": null,
+      "external": null,
+      "externalLabel": null,
+      "featured": true
+    },
+    {
+      "id": 9,
+      "title": "Growth Orbit Internship — Valtrix Powertrain SEO",
+      "description": "Backlinking and keyword research for valtrixpowertrain.com as part of my SEO internship at Growth Orbit Marketing Agency. Site achieved +400% growth in organic keywords (15 keywords), 7 referring domains, and 19 backlinks tracked via Semrush.",
+      "tags": ["Backlinking", "Keyword Research", "Semrush", "Off-Page SEO"],
+      "category": "SEO",
+      "image": "/images/projects/valtrix-domain-overview.png",
+      "gallery": [
+        "/images/projects/valtrix-domain-overview.png",
+        "/images/projects/valtrix-keywords.png",
+        "/images/projects/valtrix-backlink.png"
+      ],
+      "live": "https://valtrixpowertrain.com/",
+      "github": null,
+      "download": null,
+      "downloadLabel": null,
+      "external": null,
+      "externalLabel": null,
+      "featured": true
     }
   ],
   "experience": [
     {
       "id": 1,
+      "role": "SEO Intern",
+      "company": "Growth Orbit Marketing Agency",
+      "period": "April 14, 2026 – Present",
+      "type": "work",
+      "description": "Performing backlinking and keyword research for client websites including valtrixpowertrain.com and alsaudiatibbifoundation.pk. Tracking performance via Semrush — achieved +400% keyword growth for Valtrix and 589 organic traffic for Al Saudia Tibbi Foundation."
+    },
+    {
+      "id": 2,
       "role": "SEO Assistant / Intern",
       "company": "Zenith Collective",
       "period": "July 2025 – December 2025",
@@ -177,7 +240,7 @@
       "description": "Supported on-page SEO, keyword research, site audits, competitor analysis, and off-page initiatives including backlink outreach and guest posting. Managed websites: LevyLaw & GGHLaw."
     },
     {
-      "id": 2,
+      "id": 3,
       "role": "Researcher",
       "company": "Department of Science and Technology",
       "period": "June 2024 – December 2025",
@@ -185,7 +248,7 @@
       "description": "Analyzed large plant operational datasets, maintained structured datasets for inventory and environmental monitoring, coordinated monthly project meetings, and produced technical and regulatory reports."
     },
     {
-      "id": 3,
+      "id": 4,
       "role": "Process Engineer",
       "company": "Taganito HPAL Nickel Corporation",
       "period": "December 2020 – December 2023",
@@ -193,7 +256,7 @@
       "description": "Collected and analyzed operational data to identify inefficiencies, prepared technical reports for management, and developed an Excel VBA system for chemical inventory tracking."
     },
     {
-      "id": 4,
+      "id": 5,
       "role": "Bachelor of Science in Chemical Engineering",
       "company": "Mindanao State University – Iligan Institute of Technology",
       "period": "2015 – 2019",
@@ -201,7 +264,7 @@
       "description": "Graduated with a degree in Chemical Engineering, building a strong foundation in analytical thinking, process optimization, and data-driven problem solving."
     },
     {
-      "id": 5,
+      "id": 6,
       "role": "Diploma in Chemical Engineering Technology",
       "company": "Mindanao State University – Iligan Institute of Technology",
       "period": "2012 – 2015",
@@ -213,12 +276,12 @@
     "email": "gerald.gumahad17@gmail.com",
     "phone": "+63 945 793 8546",
     "location": "Cebu City, Philippines",
-    "formspreeId": "mykogvbl",
+    "formspreeId": "YOUR_FORMSPREE_ID",
     "socials": [
       { "label": "Email", "href": "mailto:gerald.gumahad17@gmail.com", "icon": "email" },
       { "label": "WhatsApp", "href": "https://wa.me/639457938546", "icon": "whatsapp" },
       { "label": "LinkedIn", "href": "https://linkedin.com/in/gerald-gumahad", "icon": "linkedin" },
-      { "label": "GitHub", "href": "https://github.com/ggumahad17", "icon": "github" }
+      { "label": "GitHub", "href": "https://github.com/gerald-gumahad", "icon": "github" }
     ]
   }
 }

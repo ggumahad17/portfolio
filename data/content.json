@@ -1,0 +1,174 @@
+{
+  "site": {
+    "title": "Gerald Gumahad — SEO & Data Analyst",
+    "description": "Chemical Engineer turned SEO Assistant and Data Analyst. Turning data into rankings and insights into action.",
+    "url": "https://geraldgumahad.vercel.app",
+    "ogImage": "/images/og-image.png"
+  },
+  "hero": {
+    "name": "Gerald Gumahad",
+    "title": "SEO Assistant · Data Analyst",
+    "tagline": "Turning raw data into rankings — and insights into action.",
+    "cta": {
+      "primary": { "label": "View Projects", "href": "#projects" },
+      "secondary": { "label": "Contact Me", "href": "#contact" }
+    },
+    "resume": "/Gerald_Gumahad_Resume.pdf"
+  },
+  "about": {
+    "bio": "I'm a Chemical Engineer transitioning into Data Analytics and SEO, bringing a strong foundation in analytical thinking, problem-solving, and process optimization. I have hands-on experience with data handling, reporting, and extracting insights — alongside practical SEO work in keyword research, on-page optimization, and content development.",
+    "highlights": [
+      { "icon": "🎓", "label": "Chemical Engineer", "sublabel": "MSU-IIT, 2019" },
+      { "icon": "📊", "label": "Data Analyst", "sublabel": "Power BI · Excel VBA · GA4" },
+      { "icon": "🔍", "label": "SEO Assistant", "sublabel": "Semrush · GSC · WordPress" },
+      { "icon": "📍", "label": "Based in", "sublabel": "Cebu City, Philippines" }
+    ],
+    "image": "/images/profile.jpg"
+  },
+  "skills": [
+    {
+      "category": "SEO & Content",
+      "icon": "🔍",
+      "items": [
+        { "name": "Keyword Research", "level": 85 },
+        { "name": "On-Page Optimization", "level": 85 },
+        { "name": "Site Audits", "level": 80 },
+        { "name": "Semrush", "level": 80 },
+        { "name": "Google Search Console", "level": 82 },
+        { "name": "Backlink Outreach", "level": 72 }
+      ]
+    },
+    {
+      "category": "Data & Analytics",
+      "icon": "📊",
+      "items": [
+        { "name": "Google Analytics 4", "level": 83 },
+        { "name": "Power BI", "level": 78 },
+        { "name": "Excel VBA", "level": 85 },
+        { "name": "Data Visualization", "level": 82 },
+        { "name": "Google Sheets", "level": 90 },
+        { "name": "Data Collection", "level": 88 }
+      ]
+    },
+    {
+      "category": "CMS & Tools",
+      "icon": "🛠️",
+      "items": [
+        { "name": "WordPress", "level": 80 },
+        { "name": "Divi Builder", "level": 78 },
+        { "name": "Google PageSpeed Insights", "level": 75 },
+        { "name": "ClickUp", "level": 85 },
+        { "name": "Asana", "level": 80 },
+        { "name": "Google Workspace", "level": 90 }
+      ]
+    },
+    {
+      "category": "Collaboration",
+      "icon": "💬",
+      "items": [
+        { "name": "Slack", "level": 90 },
+        { "name": "Microsoft Teams", "level": 88 },
+        { "name": "Technical Reporting", "level": 85 },
+        { "name": "Process Optimization", "level": 83 },
+        { "name": "Administrative Support", "level": 85 },
+        { "name": "Client Communication", "level": 82 }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Law Firm SEO Optimization",
+      "description": "Managed end-to-end on-page SEO for two law firm websites — LevyLaw and GGHLaw. Optimized title tags, meta descriptions, headers, URLs, and internal links. Conducted keyword research and site audits to close content gaps.",
+      "tags": ["SEO", "WordPress", "Semrush", "GSC"],
+      "category": "SEO",
+      "live": "https://levylaw.com",
+      "github": null,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Chemical Inventory Tracking System",
+      "description": "Developed and implemented an Excel VBA–based system to systematically record, monitor, and analyze chemical inventory data for Taganito HPAL Nickel Corporation. Improved data accuracy and traceability across operations.",
+      "tags": ["Excel VBA", "Data Analysis", "Process Engineering"],
+      "category": "Data",
+      "live": null,
+      "github": null,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Plant Operations Data Dashboard",
+      "description": "Built structured datasets and visual dashboards for inventory, production, and environmental monitoring during tenure with the Department of Science and Technology. Produced comprehensive technical and regulatory reports.",
+      "tags": ["Power BI", "Data Visualization", "Reporting"],
+      "category": "Data",
+      "live": null,
+      "github": null,
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "SEO Audit & Competitor Analysis",
+      "description": "Performed comprehensive site audits and competitor analysis to identify content gaps and optimization opportunities. Contributed to off-page SEO initiatives including backlink outreach and guest posting strategies.",
+      "tags": ["SEO Audit", "Semrush", "Competitor Analysis", "Link Building"],
+      "category": "SEO",
+      "live": null,
+      "github": null,
+      "featured": false
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "role": "SEO Assistant / Intern",
+      "company": "Zenith Collective",
+      "period": "July 2025 – December 2025",
+      "type": "work",
+      "description": "Supported on-page SEO, keyword research, site audits, competitor analysis, and off-page initiatives including backlink outreach and guest posting. Managed websites: LevyLaw & GGHLaw."
+    },
+    {
+      "id": 2,
+      "role": "Researcher",
+      "company": "Department of Science and Technology",
+      "period": "June 2024 – December 2025",
+      "type": "work",
+      "description": "Analyzed large plant operational datasets, maintained structured datasets for inventory and environmental monitoring, coordinated monthly project meetings, and produced technical and regulatory reports."
+    },
+    {
+      "id": 3,
+      "role": "Process Engineer",
+      "company": "Taganito HPAL Nickel Corporation",
+      "period": "December 2020 – December 2023",
+      "type": "work",
+      "description": "Collected and analyzed operational data to identify inefficiencies, prepared technical reports for management, and developed an Excel VBA system for chemical inventory tracking."
+    },
+    {
+      "id": 4,
+      "role": "Bachelor of Science in Chemical Engineering",
+      "company": "Mindanao State University – Iligan Institute of Technology",
+      "period": "2015 – 2019",
+      "type": "education",
+      "description": "Graduated with a degree in Chemical Engineering, building a strong foundation in analytical thinking, process optimization, and data-driven problem solving."
+    },
+    {
+      "id": 5,
+      "role": "Diploma in Chemical Engineering Technology",
+      "company": "Mindanao State University – Iligan Institute of Technology",
+      "period": "2012 – 2015",
+      "type": "education",
+      "description": "Completed diploma-level technical education in chemical engineering technology."
+    }
+  ],
+  "contact": {
+    "email": "gerald.gumahad17@gmail.com",
+    "phone": "+63 945 793 8546",
+    "location": "Cebu City, Philippines",
+    "formspreeId": "YOUR_FORMSPREE_ID",
+    "socials": [
+      { "label": "Email", "href": "mailto:gerald.gumahad17@gmail.com", "icon": "email" },
+      { "label": "WhatsApp", "href": "https://wa.me/639457938546", "icon": "whatsapp" },
+      { "label": "LinkedIn", "href": "https://linkedin.com/in/gerald-gumahad", "icon": "linkedin" },
+      { "label": "GitHub", "href": "https://github.com/gerald-gumahad", "icon": "github" }
+    ]
+  }
+}

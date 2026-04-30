@@ -1,12 +1,12 @@
 {
   "site": {
-    "title": "Gerald Gumahad — SEO & Data Analyst",
+    "title": "Gerald M. Gumahad — SEO & Data Analyst",
     "description": "Chemical Engineer turned SEO Assistant and Data Analyst. Turning data into rankings and insights into action.",
     "url": "https://geraldgumahad.vercel.app",
     "ogImage": "/images/og-image.png"
   },
   "hero": {
-    "name": "Gerald Gumahad",
+    "name": "Gerald M. Gumahad",
     "title": "SEO Assistant · Data Analyst",
     "tagline": "Turning raw data into rankings — and insights into action.",
     "cta": {
@@ -82,8 +82,13 @@
       "description": "Managed end-to-end on-page SEO for two law firm websites — LevyLaw and GGHLaw. Optimized title tags, meta descriptions, headers, URLs, and internal links. Conducted keyword research and site audits to close content gaps.",
       "tags": ["SEO", "WordPress", "Semrush", "GSC"],
       "category": "SEO",
+      "image": "/images/projects/seo-lawfirm.png",
       "live": "https://levylaw.com",
       "github": null,
+      "download": null,
+      "downloadLabel": null,
+      "external": null,
+      "externalLabel": null,
       "featured": true
     },
     {
@@ -92,8 +97,13 @@
       "description": "Developed and implemented an Excel VBA–based system to systematically record, monitor, and analyze chemical inventory data for Taganito HPAL Nickel Corporation. Improved data accuracy and traceability across operations.",
       "tags": ["Excel VBA", "Data Analysis", "Process Engineering"],
       "category": "Data",
+      "image": "/images/projects/inventory-system.png",
       "live": null,
       "github": null,
+      "download": "/files/inventory-tracker.xlsx",
+      "downloadLabel": "Download Excel File",
+      "external": null,
+      "externalLabel": null,
       "featured": true
     },
     {
@@ -102,8 +112,13 @@
       "description": "Built structured datasets and visual dashboards for inventory, production, and environmental monitoring during tenure with the Department of Science and Technology. Produced comprehensive technical and regulatory reports.",
       "tags": ["Power BI", "Data Visualization", "Reporting"],
       "category": "Data",
+      "image": "/images/projects/data-dashboard.png",
       "live": null,
       "github": null,
+      "download": null,
+      "downloadLabel": null,
+      "external": "https://www.kaggle.com/geraldmgumahad",
+      "externalLabel": "View on Kaggle",
       "featured": true
     },
     {
@@ -112,9 +127,44 @@
       "description": "Performed comprehensive site audits and competitor analysis to identify content gaps and optimization opportunities. Contributed to off-page SEO initiatives including backlink outreach and guest posting strategies.",
       "tags": ["SEO Audit", "Semrush", "Competitor Analysis", "Link Building"],
       "category": "SEO",
+      "image": "/images/projects/seo-audit.png",
       "live": null,
       "github": null,
+      "download": null,
+      "downloadLabel": null,
+      "external": null,
+      "externalLabel": null,
       "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Canva Design Portfolio",
+      "description": "A collection of graphic design work created in Canva, including social media graphics, presentations, and marketing materials. Showcases visual communication skills alongside data and SEO work.",
+      "tags": ["Canva", "Graphic Design", "Visual Communication"],
+      "category": "Design",
+      "image": "/images/projects/canva-design.png",
+      "live": null,
+      "github": null,
+      "download": null,
+      "downloadLabel": null,
+      "external": null,
+      "externalLabel": null,
+      "featured": true
+    },
+    {
+      "id": 6,
+      "title": "Organic Traffic Growth — Semrush",
+      "description": "Screenshot evidence of organic traffic growth achieved through on-page SEO optimizations. Tracked using Semrush showing keyword ranking improvements, traffic increases, and visibility gains over time.",
+      "tags": ["SEO", "Semrush", "Organic Traffic", "Analytics"],
+      "category": "SEO",
+      "image": "/images/projects/semrush-traffic.png",
+      "live": null,
+      "github": null,
+      "download": null,
+      "downloadLabel": null,
+      "external": null,
+      "externalLabel": null,
+      "featured": true
     }
   ],
   "experience": [

@@ -35,6 +35,9 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: content.site.title,
   description: content.site.description,
+  verification: {
+  google: "z2XppiF_DFFRm1PQmXDSJXhH9z7p_8b6c3m2XGYTT3s",
+},
   metadataBase: new URL(content.site.url),
   openGraph: {
     title: content.site.title,

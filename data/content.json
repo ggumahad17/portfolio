@@ -117,7 +117,7 @@
       "github": null,
       "download": null,
       "downloadLabel": null,
-      "external": "https://www.kaggle.com/ggumahad17",
+      "external": "https://www.kaggle.com/geraldmgumahad",
       "externalLabel": "View on Kaggle",
       "featured": true
     },
@@ -276,12 +276,12 @@
     "email": "gerald.gumahad17@gmail.com",
     "phone": "+63 945 793 8546",
     "location": "Cebu City, Philippines",
-    "formspreeId": "YOUR_FORMSPREE_ID",
+    "formspreeId": "mykogvbl",
     "socials": [
       { "label": "Email", "href": "mailto:gerald.gumahad17@gmail.com", "icon": "email" },
       { "label": "WhatsApp", "href": "https://wa.me/639457938546", "icon": "whatsapp" },
       { "label": "LinkedIn", "href": "https://linkedin.com/in/gerald-gumahad", "icon": "linkedin" },
-      { "label": "GitHub", "href": "https://github.com/gerald-gumahad", "icon": "github" }
+      { "label": "GitHub", "href": "https://github.com/ggumahad17", "icon": "github" }
     ]
   }
 }

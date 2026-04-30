@@ -1,12 +1,12 @@
 {
   "site": {
-    "title": "Gerald M. Gumahad — SEO & Data Analyst",
+    "title": "Gerald Gumahad — SEO & Data Analyst",
     "description": "Chemical Engineer turned SEO Assistant and Data Analyst. Turning data into rankings and insights into action.",
     "url": "https://geraldgumahad.vercel.app",
     "ogImage": "/images/og-image.png"
   },
   "hero": {
-    "name": "Gerald M. Gumahad",
+    "name": "Gerald Gumahad",
     "title": "SEO Assistant · Data Analyst",
     "tagline": "Turning raw data into rankings — and insights into action.",
     "cta": {
@@ -108,7 +108,7 @@
     },
     {
       "id": 3,
-      "title": "Plant Operations Data Dashboard",
+      "title": "Data Dashboard",
       "description": "Built structured datasets and visual dashboards for inventory, production, and environmental monitoring during tenure with the Department of Science and Technology. Produced comprehensive technical and regulatory reports.",
       "tags": ["Power BI", "Data Visualization", "Reporting"],
       "category": "Data",
@@ -138,7 +138,7 @@
     },
     {
       "id": 5,
-      "title": "Canva Design Portfolio",
+      "title": "Canva Design - Customer Review",
       "description": "A collection of graphic design work created in Canva, including social media graphics, presentations, and marketing materials. Showcases visual communication skills alongside data and SEO work.",
       "tags": ["Canva", "Graphic Design", "Visual Communication"],
       "category": "Design",

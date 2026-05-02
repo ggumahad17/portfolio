@@ -48,8 +48,8 @@ export default function About() {
             {/* Left — text */}
             <div>
               <h2 className="section-heading">
-                Engineer by Training,{" "}
-                <span className="text-gradient">Turning Data into Smart Decision-Making</span>
+                Engineer by Training{" "}
+                <span className="text-gradient">Driving Growth with SEO and Data</span>
               </h2>
               <div className="section-divider" />
 

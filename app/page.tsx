@@ -6,6 +6,7 @@ import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/ui/Footer";
+import ChatWidget from "@/components/ui/ChatWidget";
 
 /* ============================================================
    PAGE LAYOUT
@@ -38,6 +39,7 @@ export default function Home() {
         <Experience />
         <Contact />
         <Footer />
+        <ChatWidget />
       </div>
     </main>
   );

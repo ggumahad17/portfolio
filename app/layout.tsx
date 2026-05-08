@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "../styles/globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import content from "@/data/content.json";
 
-/* ============================================================
-   FONT CONFIGURATION
-   To change fonts, update the Google Fonts imports below.
-   ============================================================ */
 const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -29,15 +26,9 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-/* ============================================================
-   SEO METADATA — Edit via /data/content.json → site section
-   ============================================================ */
 export const metadata: Metadata = {
   title: content.site.title,
   description: content.site.description,
-  verification: {
-  google: "z2XppiF_DFFRm1PQmXDSJXhH9z7p_8b6c3m2XGYTT3s",
-},
   metadataBase: new URL(content.site.url),
   openGraph: {
     title: content.site.title,
@@ -65,11 +56,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className="dark"
-      suppressHydrationWarning
-    >
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        {/* Google Analytics — Measurement ID: G-9DGGR17GN7 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9DGGR17GN7"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9DGGR17GN7');
+          `}
+        </Script>
+      </head>
       <body
         className={`${playfair.variable} ${dmSans.variable} ${jetbrains.variable} font-body antialiased`}
       >

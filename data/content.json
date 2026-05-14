@@ -63,7 +63,7 @@
       ]
     },
     {
-      "category": "Collaboration",
+      "category": "Project Management",
       "icon": "💬",
       "items": [
         { "name": "Slack", "level": 90 },

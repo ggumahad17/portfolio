@@ -23,7 +23,7 @@ const certs = [
       "Completed the 8-course professional certificate covering data cleaning, analysis, visualization, and tools including spreadsheets, SQL, Tableau, and R.",
     tags: ["Data Analytics", "SQL", "Tableau", "R", "Spreadsheets"],
     download: "/files/google-data-analytics-certificate.pdf",
-    credly: "https://www.credly.com/go/GVay4CN1",
+    credly: "https://www.credly.com/users/gerald-gumahad/badges#credly",
     featured: true,
   },
   {
@@ -130,7 +130,7 @@ export default function Certifications() {
           {/* Credly CTA */}
           <div className="mt-10 text-center">
             <a
-              href="https://www.credly.com/go/GVay4CN1"
+              href="https://www.credly.com/users/gerald-gumahad/badges#credly"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline inline-flex items-center gap-2"

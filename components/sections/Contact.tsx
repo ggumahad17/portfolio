@@ -95,7 +95,7 @@ export default function Contact() {
           {/* Header */}
           <div className="text-center mb-12">
             <div className="section-tag mx-auto w-fit">
-              <span>05</span>
+              <span>01</span>
               <span>Contact</span>
             </div>
             <h2 className="section-heading">

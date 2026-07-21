@@ -1,0 +1,4 @@
+{
+  "_comment": "Add posts here to populate /blog. Each post needs a unique slug (used for the URL /blog/<slug>). `body` is an array of paragraphs rendered as plain text — keep formatting simple.",
+  "posts": []
+}

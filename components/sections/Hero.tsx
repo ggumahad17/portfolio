@@ -164,7 +164,7 @@ export default function Hero() {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 flex-wrap">
           <a href={hero.cta.primary.href} className="btn-primary text-base px-8 py-4">
             {hero.cta.primary.label}
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256">
@@ -173,6 +173,12 @@ export default function Hero() {
           </a>
           <a href={hero.cta.secondary.href} className="btn-outline text-base px-8 py-4">
             {hero.cta.secondary.label}
+          </a>
+          <a href={hero.cta.resume.href} download className="btn-outline text-base px-8 py-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z" />
+            </svg>
+            {hero.cta.resume.label}
           </a>
         </div>
 

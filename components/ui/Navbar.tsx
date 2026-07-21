@@ -1,28 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
 import content from "@/data/content.json";
-
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Certificates", href: "#certifications" },
-  { label: "Contact", href: "#contact" },
-];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname?.startsWith(href);
 
   return (
     <header
@@ -34,35 +31,35 @@ export default function Navbar() {
     >
       <div className="container-max flex items-center justify-between px-4 md:px-8 lg:px-16">
         {/* Logo */}
-        <a
-          href="#"
-          aria-label="Gerald Gumahad Portfolio"
-        >
+        <Link href="/" aria-label="Gerald Gumahad Portfolio">
           <img
             src="/images/logo.webp"
             alt="GG Portfolio Logo"
             style={{ height: "36px", width: "auto" }}
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
+          {content.nav.map((link) => (
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium transition-colors duration-200 relative group"
-              style={{ color: "var(--color-text-secondary)" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "#00c8b4")
-              }
+              style={{ color: isActive(link.href) ? "#00c8b4" : "var(--color-text-secondary)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#00c8b4")}
               onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "var(--color-text-secondary)")
+                (e.currentTarget.style.color = isActive(link.href)
+                  ? "#00c8b4"
+                  : "var(--color-text-secondary)")
               }
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full" />
-            </a>
+              <span
+                className="absolute -bottom-1 left-0 h-0.5 bg-accent-500 transition-all duration-300 group-hover:w-full"
+                style={{ width: isActive(link.href) ? "100%" : "0" }}
+              />
+            </Link>
           ))}
         </nav>
 
@@ -100,7 +97,7 @@ export default function Navbar() {
 
           {/* Resume download */}
           <a
-            href={content.hero.resume}
+            href={content.resume.pdf}
             download
             className="hidden md:flex btn-outline text-sm py-2 px-4"
           >
@@ -133,19 +130,19 @@ export default function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden glass border-t border-navy-700/40 px-4 py-6 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <a
+          {content.nav.map((link) => (
+            <Link
               key={link.href}
               href={link.href}
               className="text-base font-medium py-2"
-              style={{ color: "var(--color-text-secondary)" }}
+              style={{ color: isActive(link.href) ? "#00c8b4" : "var(--color-text-secondary)" }}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
-            href={content.hero.resume}
+            href={content.resume.pdf}
             download
             className="btn-outline text-sm py-2 w-fit mt-2"
             onClick={() => setMenuOpen(false)}

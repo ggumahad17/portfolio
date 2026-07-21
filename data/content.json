@@ -1,77 +1,206 @@
 {
   "site": {
-    "title": "Gerald Gumahad — SEO & Data Analyst",
+    "title": "Gerald Gumahad \u2014 SEO & Data Analyst",
     "description": "Chemical Engineer turned SEO Assistant and Data Analyst. Turning data into rankings and insights into action.",
     "url": "https://geraldgumahad-portfolio.vercel.app",
     "ogImage": "/images/og-image.png"
   },
+  "nav": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Projects",
+      "href": "/projects"
+    },
+    {
+      "label": "Skills",
+      "href": "/skills"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
   "hero": {
     "name": "Gerald Gumahad",
-    "title": "SEO Specialist · Data Analyst · Executive Assistant",
-    "tagline": "Turning raw data into rankings — and insights into action.",
+    "title": "SEO Specialist \u00b7 Data Analyst \u00b7 Executive Assistant",
+    "tagline": "Turning raw data into rankings \u2014 and insights into action.",
     "cta": {
-      "primary": { "label": "View Projects", "href": "#projects" },
-      "secondary": { "label": "Contact Me", "href": "#contact" }
+      "primary": {
+        "label": "View Projects",
+        "href": "/projects"
+      },
+      "secondary": {
+        "label": "About Me",
+        "href": "/about"
+      },
+      "resume": {
+        "label": "Download Resume",
+        "href": "/Gerald_Gumahad_Resume.pdf"
+      }
     },
     "resume": "/Gerald_Gumahad_Resume.pdf"
   },
   "about": {
-    "bio": "I'm a Chemical Engineer transitioning into Data Analytics and SEO, bringing a strong foundation in analytical thinking, problem-solving, and process optimization. I have hands-on experience with data handling, reporting, and extracting insights — alongside practical SEO work in keyword research, on-page optimization, and content development.",
+    "bio": "I'm a Chemical Engineer transitioning into Data Analytics and SEO, bringing a strong foundation in analytical thinking, problem-solving, and process optimization. I have hands-on experience with data handling, reporting, and extracting insights \u2014 alongside practical SEO work in keyword research, on-page optimization, and content development.",
     "highlights": [
-      { "icon": "🎓", "label": "Chemical Engineer", "sublabel": "MSU-IIT, 2019" },
-      { "icon": "📊", "label": "Data Analyst", "sublabel": "Power BI · Excel VBA · GA4" },
-      { "icon": "🔍", "label": "SEO Assistant", "sublabel": "Semrush · GSC · WordPress" },
-      { "icon": "📍", "label": "Based in", "sublabel": "Cebu City, Philippines" }
+      {
+        "icon": "\ud83c\udf93",
+        "label": "Chemical Engineer",
+        "sublabel": "MSU-IIT, 2019"
+      },
+      {
+        "icon": "\ud83d\udcca",
+        "label": "Data Analyst",
+        "sublabel": "Power BI \u00b7 Excel VBA \u00b7 GA4"
+      },
+      {
+        "icon": "\ud83d\udd0d",
+        "label": "SEO Assistant",
+        "sublabel": "Semrush \u00b7 GSC \u00b7 WordPress"
+      },
+      {
+        "icon": "\ud83d\udccd",
+        "label": "Based in",
+        "sublabel": "Cebu City, Philippines"
+      }
     ],
-    "image": "/images/profile.jpg"
+    "image": "/images/profile.jpg",
+    "resumeSummary": "A structured, scannable summary of my experience, education, and core skills \u2014 pulled straight from my resume. Prefer the formal document? Grab the PDF version below."
+  },
+  "resume": {
+    "pdf": "/Gerald_Gumahad_Resume.pdf",
+    "downloadLabel": "Download PDF"
   },
   "skills": [
     {
       "category": "SEO & Content",
-      "icon": "🔍",
+      "icon": "\ud83d\udd0d",
       "items": [
-        { "name": "Keyword Research", "level": 85 },
-        { "name": "On-Page Optimization", "level": 85 },
-        { "name": "Site Audits", "level": 80 },
-        { "name": "Semrush", "level": 80 },
-        { "name": "Google Search Console", "level": 82 },
-        { "name": "Backlink Outreach", "level": 72 }
+        {
+          "name": "Keyword Research",
+          "level": 85
+        },
+        {
+          "name": "On-Page Optimization",
+          "level": 85
+        },
+        {
+          "name": "Site Audits",
+          "level": 80
+        },
+        {
+          "name": "Semrush",
+          "level": 80
+        },
+        {
+          "name": "Google Search Console",
+          "level": 82
+        },
+        {
+          "name": "Backlink Outreach",
+          "level": 72
+        }
       ]
     },
     {
       "category": "Data & Analytics",
-      "icon": "📊",
+      "icon": "\ud83d\udcca",
       "items": [
-        { "name": "Google Analytics 4", "level": 83 },
-        { "name": "Power BI", "level": 78 },
-        { "name": "Excel VBA", "level": 85 },
-        { "name": "Data Visualization", "level": 82 },
-        { "name": "Google Sheets", "level": 90 },
-        { "name": "Data Collection", "level": 88 }
+        {
+          "name": "Google Analytics 4",
+          "level": 83
+        },
+        {
+          "name": "Power BI",
+          "level": 78
+        },
+        {
+          "name": "Excel VBA",
+          "level": 85
+        },
+        {
+          "name": "Data Visualization",
+          "level": 82
+        },
+        {
+          "name": "Google Sheets",
+          "level": 90
+        },
+        {
+          "name": "Data Collection",
+          "level": 88
+        }
       ]
     },
     {
       "category": "CMS & Tools",
-      "icon": "🛠️",
+      "icon": "\ud83d\udee0\ufe0f",
       "items": [
-        { "name": "WordPress", "level": 80 },
-        { "name": "Divi Builder", "level": 78 },
-        { "name": "Google PageSpeed Insights", "level": 75 },
-        { "name": "ClickUp", "level": 85 },
-        { "name": "Asana", "level": 80 },
-        { "name": "Google Workspace", "level": 90 }
+        {
+          "name": "WordPress",
+          "level": 80
+        },
+        {
+          "name": "Divi Builder",
+          "level": 78
+        },
+        {
+          "name": "Google PageSpeed Insights",
+          "level": 75
+        },
+        {
+          "name": "ClickUp",
+          "level": 85
+        },
+        {
+          "name": "Asana",
+          "level": 80
+        },
+        {
+          "name": "Google Workspace",
+          "level": 90
+        }
       ]
     },
     {
       "category": "Project Management",
-      "icon": "💬",
+      "icon": "\ud83d\udcac",
       "items": [
-        { "name": "Slack", "level": 90 },
-        { "name": "Microsoft Teams", "level": 88 },
-        { "name": "Technical Reporting", "level": 85 },
-        { "name": "Process Optimization", "level": 83 },
-        { "name": "Administrative Support", "level": 85 },
-        { "name": "Client Communication", "level": 82 }
+        {
+          "name": "Slack",
+          "level": 90
+        },
+        {
+          "name": "Microsoft Teams",
+          "level": 88
+        },
+        {
+          "name": "Technical Reporting",
+          "level": 85
+        },
+        {
+          "name": "Process Optimization",
+          "level": 83
+        },
+        {
+          "name": "Administrative Support",
+          "level": 85
+        },
+        {
+          "name": "Client Communication",
+          "level": 82
+        }
       ]
     }
   ],
@@ -79,8 +208,13 @@
     {
       "id": 1,
       "title": "Law Firm SEO Optimization",
-      "description": "Managed end-to-end on-page SEO for two law firm websites — LevyLaw and GGHLaw. Optimized title tags, meta descriptions, headers, URLs, and internal links. Conducted keyword research and site audits to close content gaps.",
-      "tags": ["SEO", "WordPress", "Semrush", "GSC"],
+      "description": "Managed end-to-end on-page SEO for two law firm websites \u2014 LevyLaw and GGHLaw. Optimized title tags, meta descriptions, headers, URLs, and internal links. Conducted keyword research and site audits to close content gaps.",
+      "tags": [
+        "SEO",
+        "WordPress",
+        "Semrush",
+        "GSC"
+      ],
       "category": "SEO",
       "image": "/images/projects/seo-lawfirm.png",
       "live": "https://levylaw.com",
@@ -89,13 +223,19 @@
       "downloadLabel": null,
       "external": null,
       "externalLabel": null,
-      "featured": true
+      "featured": true,
+      "slug": "law-firm-seo-optimization",
+      "caseStudy": null
     },
     {
       "id": 2,
       "title": "Sales Tracker System",
       "description": "Developed a Sales Tracker system in Excel using VBA automation to organize, monitor, and analyze sales data based on publicly available datasets. Designed interactive tracking and reporting features that improved data accuracy, streamlined record management, and supported more efficient data analysis and decision-making.",
-      "tags": ["Excel VBA", "Data Analysis", "Process Engineering"],
+      "tags": [
+        "Excel VBA",
+        "Data Analysis",
+        "Process Engineering"
+      ],
       "category": "Data",
       "image": "/images/projects/sales-tracker.png",
       "live": null,
@@ -104,13 +244,19 @@
       "downloadLabel": "Download Excel File",
       "external": null,
       "externalLabel": null,
-      "featured": true
+      "featured": true,
+      "slug": "sales-tracker-system",
+      "caseStudy": null
     },
     {
       "id": 3,
       "title": "Data Dashboard",
       "description": "Built structured datasets and visual dashboards for inventory, production, and environmental monitoring during tenure with the Department of Science and Technology. Produced comprehensive technical and regulatory reports.",
-      "tags": ["Power BI", "Data Visualization", "Reporting"],
+      "tags": [
+        "Power BI",
+        "Data Visualization",
+        "Reporting"
+      ],
       "category": "Data",
       "image": "/images/projects/data-dashboard.png",
       "live": null,
@@ -119,13 +265,20 @@
       "downloadLabel": null,
       "external": "https://www.kaggle.com/geraldmgumahad",
       "externalLabel": "View on Kaggle",
-      "featured": true
+      "featured": true,
+      "slug": "data-dashboard",
+      "caseStudy": null
     },
     {
       "id": 4,
       "title": "SEO Audit & Competitor Analysis",
       "description": "Performed comprehensive site audits and competitor analysis to identify content gaps and optimization opportunities. Contributed to off-page SEO initiatives including backlink outreach and guest posting strategies.",
-      "tags": ["SEO Audit", "Semrush", "Competitor Analysis", "Link Building"],
+      "tags": [
+        "SEO Audit",
+        "Semrush",
+        "Competitor Analysis",
+        "Link Building"
+      ],
       "category": "SEO",
       "image": "/images/projects/seo-audit.png",
       "live": null,
@@ -134,13 +287,19 @@
       "downloadLabel": null,
       "external": "https://docs.google.com/document/d/1_-fSX5XkSrcKsTRH3scKEESiFbvfS7PPHGvsIjten2Q/edit?tab=t.0",
       "externalLabel": "Sample of SEO Audit Report",
-      "featured": false
+      "featured": false,
+      "slug": "seo-audit-competitor-analysis",
+      "caseStudy": null
     },
     {
       "id": 5,
       "title": "Canva Design - Customer Review",
       "description": "A collection of graphic design work created in Canva, including social media graphics, presentations, and marketing materials. Showcases visual communication skills alongside data and SEO work.",
-      "tags": ["Canva", "Graphic Design", "Visual Communication"],
+      "tags": [
+        "Canva",
+        "Graphic Design",
+        "Visual Communication"
+      ],
       "category": "Design",
       "image": "/images/projects/canva-design.png",
       "live": null,
@@ -149,13 +308,20 @@
       "downloadLabel": null,
       "external": null,
       "externalLabel": null,
-      "featured": true
+      "featured": true,
+      "slug": "canva-design-customer-review",
+      "caseStudy": null
     },
     {
       "id": 6,
-      "title": "Organic Traffic Growth — Semrush",
+      "title": "Organic Traffic Growth \u2014 Semrush",
       "description": "Screenshot evidence of organic traffic growth achieved through on-page SEO optimizations. Tracked using Semrush showing keyword ranking improvements, traffic increases, and visibility gains over time.",
-      "tags": ["SEO", "Semrush", "Organic Traffic", "Analytics"],
+      "tags": [
+        "SEO",
+        "Semrush",
+        "Organic Traffic",
+        "Analytics"
+      ],
       "category": "SEO",
       "image": "/images/projects/semrush-traffic.png",
       "live": null,
@@ -164,13 +330,20 @@
       "downloadLabel": null,
       "external": null,
       "externalLabel": null,
-      "featured": true
+      "featured": true,
+      "slug": "organic-traffic-growth-semrush",
+      "caseStudy": null
     },
     {
       "id": 7,
-      "title": "Canva Design — Streamline Aluminium",
+      "title": "Canva Design \u2014 Streamline Aluminium",
       "description": "Created a professional marketing graphic for Streamline, an aluminium panel supplier in Sydney. Designed to target builders and developers with clear product specs, brand colours, and a strong call to action.",
-      "tags": ["Canva", "Graphic Design", "Marketing", "Social Media"],
+      "tags": [
+        "Canva",
+        "Graphic Design",
+        "Marketing",
+        "Social Media"
+      ],
       "category": "Design",
       "image": "/images/projects/canva-design-2.png",
       "live": null,
@@ -179,13 +352,20 @@
       "downloadLabel": null,
       "external": null,
       "externalLabel": null,
-      "featured": true
+      "featured": true,
+      "slug": "canva-design-streamline-aluminium",
+      "caseStudy": null
     },
     {
       "id": 8,
-      "title": "Growth Orbit Internship — Al Saudia SEO",
+      "title": "Growth Orbit Internship \u2014 Al Saudia SEO",
       "description": "Backlinking and keyword research for alsaudiatibbifoundation.pk as part of my SEO internship at Growth Orbit Marketing Agency. Domain achieved Authority Score 10, 589 organic traffic, 111 organic keywords, and 65 backlinks tracked via Semrush.",
-      "tags": ["Backlinking", "Keyword Research", "Semrush", "Off-Page SEO"],
+      "tags": [
+        "Backlinking",
+        "Keyword Research",
+        "Semrush",
+        "Off-Page SEO"
+      ],
       "category": "SEO",
       "image": "/images/projects/al-saudia-domain-overview.png",
       "gallery": [
@@ -199,13 +379,20 @@
       "downloadLabel": null,
       "external": null,
       "externalLabel": null,
-      "featured": true
+      "featured": true,
+      "slug": "growth-orbit-internship-al-saudia-seo",
+      "caseStudy": null
     },
     {
       "id": 9,
-      "title": "Growth Orbit Internship — Valtrix Powertrain SEO",
+      "title": "Growth Orbit Internship \u2014 Valtrix Powertrain SEO",
       "description": "Backlinking and keyword research for valtrixpowertrain.com as part of my SEO internship at Growth Orbit Marketing Agency. Site achieved +400% growth in organic keywords (15 keywords), 7 referring domains, and 19 backlinks tracked via Semrush.",
-      "tags": ["Backlinking", "Keyword Research", "Semrush", "Off-Page SEO"],
+      "tags": [
+        "Backlinking",
+        "Keyword Research",
+        "Semrush",
+        "Off-Page SEO"
+      ],
       "category": "SEO",
       "image": "/images/projects/valtrix-domain-overview.png",
       "gallery": [
@@ -219,7 +406,57 @@
       "downloadLabel": null,
       "external": null,
       "externalLabel": null,
-      "featured": true
+      "featured": true,
+      "slug": "growth-orbit-internship-valtrix-powertrain-seo",
+      "caseStudy": null
+    },
+    {
+      "id": 10,
+      "title": "ATSify (ResuMerge)",
+      "slug": "atsify",
+      "description": "An AI-powered resume converter that reformats resumes into clean, ATS-friendly documents so they parse correctly in applicant tracking systems before a human ever sees them.",
+      "tags": [
+        "Next.js",
+        "Google Gemini API",
+        "Vercel",
+        "Full-Stack"
+      ],
+      "category": "Design",
+      "image": "/images/projects/atsify-cover.png",
+      "live": "https://resumerge.vercel.app",
+      "github": null,
+      "download": null,
+      "downloadLabel": null,
+      "external": null,
+      "externalLabel": null,
+      "featured": true,
+      "gallery": null,
+      "caseStudy": {
+        "role": "Solo developer \u2014 product, design, and build",
+        "overview": "Most resumes are formatted for human eyes: columns, icons, graphics, creative layouts. Applicant Tracking Systems (ATS) that companies use to pre-screen candidates often can't parse that formatting correctly, which means a well-written resume can get silently rejected before anyone reads it. ATSify (built and shipped as ResuMerge) takes a person's existing resume and uses AI to restructure it into a clean, ATS-compatible format while preserving their actual content and experience.",
+        "problem": [
+          "Visually appealing resumes frequently fail ATS parsing, dropping or scrambling key sections like work history and skills.",
+          "Manually reformatting a resume for ATS compatibility is tedious and easy to get wrong.",
+          "Most existing tools either charge upfront or lock the core conversion behind a paywall."
+        ],
+        "solution": [
+          "Built a web app where a user uploads their existing resume and the app extracts and restructures the content using the Google Gemini API.",
+          "Output is a clean, single-column, ATS-friendly resume format that preserves the original wording and experience.",
+          "Deployed on Vercel for fast, reliable hosting with minimal ops overhead.",
+          "Kept the core tool free to use, with optional support via Ko-fi rather than a hard paywall."
+        ],
+        "techStack": [
+          "Next.js",
+          "Google Gemini API (free tier)",
+          "Vercel",
+          "Ko-fi (monetization)"
+        ],
+        "results": "Live and publicly available at resumerge.vercel.app for anyone to convert their resume free of charge.",
+        "links": {
+          "live": "https://resumerge.vercel.app",
+          "liveLabel": "Try ResuMerge"
+        }
+      }
     }
   ],
   "experience": [
@@ -227,7 +464,7 @@
       "id": 1,
       "role": "SEO Intern",
       "company": "Growth Orbit Marketing Agency",
-      "period": "April 14, 2026 – Present",
+      "period": "April 14, 2026 \u2013 Present",
       "type": "work",
       "description": "Handled backlink building and keyword research for client websites, including Valtrix Powertrain and Al Saudia Tibbi Foundation. Monitored SEO performance using Semrush, driving significant keyword growth for Valtrix Powertrain and steadily increasing organic traffic for Al Saudia Tibbi Foundation."
     },
@@ -235,7 +472,7 @@
       "id": 2,
       "role": "SEO Assistant / Intern",
       "company": "Zenith Collective",
-      "period": "July 2025 – December 2025",
+      "period": "July 2025 \u2013 December 2025",
       "type": "work",
       "description": "Supported on-page SEO, keyword research, site audits, competitor analysis, and off-page initiatives including backlink outreach and guest posting. Managed websites: LevyLaw & GGHLaw."
     },
@@ -243,7 +480,7 @@
       "id": 3,
       "role": "Researcher",
       "company": "Department of Science and Technology",
-      "period": "June 2024 – December 2025",
+      "period": "June 2024 \u2013 December 2025",
       "type": "work",
       "description": "Analyzed large plant operational datasets, maintained structured datasets for inventory and environmental monitoring, coordinated monthly project meetings, and produced technical and regulatory reports."
     },
@@ -251,23 +488,23 @@
       "id": 4,
       "role": "Process Engineer",
       "company": "Taganito HPAL Nickel Corporation",
-      "period": "December 2020 – December 2023",
+      "period": "December 2020 \u2013 December 2023",
       "type": "work",
       "description": "Collected and analyzed operational data to identify inefficiencies, prepared technical reports for management, and developed an Excel VBA system for chemical inventory tracking."
     },
     {
       "id": 5,
       "role": "Bachelor of Science in Chemical Engineering",
-      "company": "Mindanao State University – Iligan Institute of Technology",
-      "period": "2015 – 2019",
+      "company": "Mindanao State University \u2013 Iligan Institute of Technology",
+      "period": "2015 \u2013 2019",
       "type": "education",
       "description": "Graduated with a degree in Chemical Engineering, building a strong foundation in analytical thinking, process optimization, and data-driven problem solving."
     },
     {
       "id": 6,
       "role": "Diploma in Chemical Engineering Technology",
-      "company": "Mindanao State University – Iligan Institute of Technology",
-      "period": "2012 – 2015",
+      "company": "Mindanao State University \u2013 Iligan Institute of Technology",
+      "period": "2012 \u2013 2015",
       "type": "education",
       "description": "Completed diploma-level technical education in chemical engineering technology."
     }
@@ -278,10 +515,26 @@
     "location": "Cebu City, Philippines",
     "formspreeId": "mykogvbl",
     "socials": [
-      { "label": "Email", "href": "mailto:gerald.gumahad17@gmail.com", "icon": "email" },
-      { "label": "WhatsApp", "href": "https://wa.me/639457938546", "icon": "whatsapp" },
-      { "label": "LinkedIn", "href": "https://linkedin.com/in/gerald-gumahad", "icon": "linkedin" },
-      { "label": "GitHub", "href": "https://github.com/ggumahad17", "icon": "github" }
+      {
+        "label": "Email",
+        "href": "mailto:gerald.gumahad17@gmail.com",
+        "icon": "email"
+      },
+      {
+        "label": "WhatsApp",
+        "href": "https://wa.me/639457938546",
+        "icon": "whatsapp"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://linkedin.com/in/gerald-gumahad",
+        "icon": "linkedin"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/ggumahad17",
+        "icon": "github"
+      }
     ]
   }
 }

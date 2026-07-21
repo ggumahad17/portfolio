@@ -3,6 +3,7 @@ import { Playfair_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "../styles/globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import SiteChrome from "@/components/ui/SiteChrome";
 import content from "@/data/content.json";
 
 const playfair = Playfair_Display({
@@ -75,7 +76,9 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${dmSans.variable} ${jetbrains.variable} font-body antialiased`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <SiteChrome>{children}</SiteChrome>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -235,7 +235,7 @@ export default function ChatWidget() {
                 Still have questions?
               </p>
               <a
-                href="#contact"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg transition-all duration-200"
                 style={{ background: "rgba(0,200,180,0.15)", border: "1px solid rgba(0,200,180,0.3)", color: "#00c8b4" }}

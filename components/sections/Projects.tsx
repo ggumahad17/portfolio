@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import content from "@/data/content.json";
 import ProjectCard from "./ProjectCard";
+import Icon from "@/components/ui/Icon";
 
 /* ============================================================
    PROJECTS SECTION — full grid (used on /projects)
@@ -37,7 +38,7 @@ export default function Projects() {
   return (
     <section id="projects" className="section-padding relative overflow-hidden">
       <div className="absolute left-1/2 top-0 w-96 h-px pointer-events-none"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(0,200,180,0.4), transparent)", transform: "translateX(-50%)" }} />
+        style={{ background: "linear-gradient(90deg, transparent, rgba(59,158,255,0.4), transparent)", transform: "translateX(-50%)" }} />
 
       <div className="container-max" ref={ref}>
         <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)" }}>
@@ -54,7 +55,7 @@ export default function Projects() {
             {categories.map((cat) => (
               <button key={cat} onClick={() => setFilter(cat)}
                 className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300"
-                style={{ backgroundColor: filter === cat ? "rgba(0,200,180,0.15)" : "transparent", border: filter === cat ? "1px solid rgba(0,200,180,0.5)" : "1px solid rgba(18,45,92,0.5)", color: filter === cat ? "#00c8b4" : "var(--color-text-secondary)" }}>
+                style={{ backgroundColor: filter === cat ? "rgba(59,158,255,0.15)" : "transparent", border: filter === cat ? "1px solid rgba(59,158,255,0.5)" : "1px solid var(--color-border)", color: filter === cat ? "var(--color-accent)" : "var(--color-text-secondary)" }}>
                 {cat}
               </button>
             ))}
@@ -73,7 +74,7 @@ export default function Projects() {
 
           <div className="mt-12 text-center">
             <a href="https://www.kaggle.com/geraldmgumahad" target="_blank" rel="noopener noreferrer" className="btn-outline inline-flex items-center gap-2">
-              <span>🔬</span> View All Data Work on Kaggle
+              <Icon name="flask" className="w-4 h-4" /> View All Data Work on Kaggle
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-82.34,82.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"/></svg>
             </a>
           </div>
@@ -83,14 +84,14 @@ export default function Projects() {
       {/* Lightbox */}
       {lightbox && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ backgroundColor: "rgba(4,13,26,0.96)" }} onClick={() => setLightbox(null)}>
+          style={{ backgroundColor: "rgba(5,7,10,0.96)" }} onClick={() => setLightbox(null)}>
           <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setLightbox(null)}
               className="absolute -top-10 right-0 text-white text-sm font-mono opacity-60 hover:opacity-100">
-              ESC to close ✕
+              ESC to close <Icon name="x" className="inline w-3.5 h-3.5" />
             </button>
             <img src={lightbox} alt="Project preview" className="w-full rounded-xl"
-              style={{ border: "1px solid rgba(0,200,180,0.2)" }} />
+              style={{ border: "1px solid rgba(59,158,255,0.2)" }} />
           </div>
         </div>
       )}

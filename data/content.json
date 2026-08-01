@@ -23,8 +23,8 @@
       "href": "/skills"
     },
     {
-      "label": "Blog",
-      "href": "/blog"
+      "label": "Certificates",
+      "href": "/certificates"
     },
     {
       "label": "Contact",
@@ -55,22 +55,22 @@
     "bio": "I'm a Chemical Engineer transitioning into Data Analytics and SEO, bringing a strong foundation in analytical thinking, problem-solving, and process optimization. I have hands-on experience with data handling, reporting, and extracting insights \u2014 alongside practical SEO work in keyword research, on-page optimization, and content development.",
     "highlights": [
       {
-        "icon": "\ud83c\udf93",
+        "icon": "graduation-cap",
         "label": "Chemical Engineer",
         "sublabel": "MSU-IIT, 2019"
       },
       {
-        "icon": "\ud83d\udcca",
+        "icon": "bar-chart",
         "label": "Data Analyst",
         "sublabel": "Power BI \u00b7 Excel VBA \u00b7 GA4"
       },
       {
-        "icon": "\ud83d\udd0d",
+        "icon": "search",
         "label": "SEO Assistant",
         "sublabel": "Semrush \u00b7 GSC \u00b7 WordPress"
       },
       {
-        "icon": "\ud83d\udccd",
+        "icon": "map-pin",
         "label": "Based in",
         "sublabel": "Cebu City, Philippines"
       }
@@ -85,7 +85,7 @@
   "skills": [
     {
       "category": "SEO & Content",
-      "icon": "\ud83d\udd0d",
+      "icon": "search",
       "items": [
         {
           "name": "Keyword Research",
@@ -115,7 +115,7 @@
     },
     {
       "category": "Data & Analytics",
-      "icon": "\ud83d\udcca",
+      "icon": "bar-chart",
       "items": [
         {
           "name": "Google Analytics 4",
@@ -145,7 +145,7 @@
     },
     {
       "category": "CMS & Tools",
-      "icon": "\ud83d\udee0\ufe0f",
+      "icon": "wrench",
       "items": [
         {
           "name": "WordPress",
@@ -175,7 +175,7 @@
     },
     {
       "category": "Project Management",
-      "icon": "\ud83d\udcac",
+      "icon": "clipboard-list",
       "items": [
         {
           "name": "Slack",

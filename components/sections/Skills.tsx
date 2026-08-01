@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import content from "@/data/content.json";
+import Icon from "@/components/ui/Icon";
 
 /* ============================================================
    SKILLS SECTION (standalone /skills page)
@@ -28,12 +29,12 @@ export default function Skills() {
     <section
       id="skills"
       className="section-padding relative overflow-hidden"
-      style={{ backgroundColor: "rgba(7,20,40,0.4)" }}
+      style={{ backgroundColor: "var(--color-section-alt)" }}
     >
       <div
         className="absolute -right-40 top-1/2 w-96 h-96 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(18,45,92,0.3) 0%, transparent 70%)",
+          background: "radial-gradient(circle, var(--color-chip-bg) 0%, transparent 70%)",
           transform: "translateY(-50%)",
         }}
       />
@@ -51,8 +52,15 @@ export default function Skills() {
             <h2 className="section-heading">
               What I bring to the <span className="text-gradient">table</span>
             </h2>
-            <p className="max-w-lg mx-auto text-base" style={{ color: "var(--color-text-secondary)" }}>
-              A mix of analytical rigour from engineering and hands-on digital marketing experience.
+            <p className="max-w-xl mx-auto text-base mb-3" style={{ color: "var(--color-text-secondary)" }}>
+              A Chemical Engineering background means I came into SEO and data work already trained to think in
+              processes, variables, and root causes — not shortcuts. That habit carried over directly: before I
+              touch a keyword list or a dashboard, I want to know what's actually being measured and why it moved.
+            </p>
+            <p className="max-w-xl mx-auto text-base" style={{ color: "var(--color-text-secondary)" }}>
+              The four domains below aren't separate skillsets so much as one approach applied to different
+              surfaces — search visibility, raw data, the sites that hold both, and the people who need the
+              results explained in plain language.
             </p>
           </div>
 
@@ -63,14 +71,13 @@ export default function Skills() {
                 key={cat.category}
                 className="card p-6 md:p-8"
                 style={{
-                  border: "1px solid rgba(18,45,92,0.6)",
                   opacity: visible ? 1 : 0,
                   transform: visible ? "translateY(0)" : "translateY(20px)",
                   transition: `all 0.5s ease ${ci * 100}ms`,
                 }}
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-2xl">{cat.icon}</span>
+                  <Icon name={cat.icon} className="w-6 h-6" style={{ color: "var(--color-accent)" }} />
                   <div>
                     <h3 className="text-lg font-display font-semibold" style={{ color: "var(--color-text-primary)" }}>
                       {cat.category}
@@ -86,6 +93,33 @@ export default function Skills() {
                     <SkillBar key={skill.name} name={skill.name} level={skill.level} delay={i * 60} animate={visible} />
                   ))}
                 </div>
+              </div>
+            ))}
+          </div>
+
+          {/* How I work */}
+          <div className="mt-14 grid sm:grid-cols-3 gap-5">
+            {[
+              {
+                title: "Measure before changing anything",
+                body: "I check what the data actually says before touching a page, a query, or a process — engineering habit, applied to marketing.",
+              },
+              {
+                title: "Process over one-off fixes",
+                body: "A ranking bump or a clean dashboard is only useful if it holds. I document the steps so the result is repeatable, not a lucky one-time win.",
+              },
+              {
+                title: "Plain-language reporting",
+                body: "Data and SEO work is wasted if the person reading it can't act on it. I write findings for the decision they're meant to support.",
+              },
+            ].map((p) => (
+              <div key={p.title} className="card p-5">
+                <h3 className="text-sm font-display font-semibold mb-2" style={{ color: "var(--color-text-primary)" }}>
+                  {p.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
+                  {p.body}
+                </p>
               </div>
             ))}
           </div>
@@ -109,16 +143,16 @@ export default function Skills() {
                   key={tool}
                   className="px-3 py-1.5 rounded-lg text-xs font-mono transition-all duration-200 cursor-default hover:-translate-y-0.5"
                   style={{
-                    backgroundColor: "rgba(18,45,92,0.4)",
-                    border: "1px solid rgba(18,45,92,0.7)",
+                    backgroundColor: "var(--color-chip-bg)",
+                    border: "1px solid var(--color-chip-border)",
                     color: "var(--color-text-secondary)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(0,200,180,0.4)";
-                    e.currentTarget.style.color = "#00c8b4";
+                    e.currentTarget.style.borderColor = "rgba(59,158,255,0.4)";
+                    e.currentTarget.style.color = "var(--color-accent)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(18,45,92,0.7)";
+                    e.currentTarget.style.borderColor = "var(--color-chip-border)";
                     e.currentTarget.style.color = "var(--color-text-secondary)";
                   }}
                 >
@@ -159,14 +193,14 @@ function SkillBar({
         <span className="text-sm font-medium" style={{ color: "var(--color-text-primary)" }}>
           {name}
         </span>
-        <span className="text-xs font-mono" style={{ color: "#00c8b4" }}>
+        <span className="text-xs font-mono" style={{ color: "var(--color-accent)" }}>
           {level}%
         </span>
       </div>
-      <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "rgba(18,45,92,0.6)" }}>
+      <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "var(--color-chip-bg)" }}>
         <div
           className="h-full rounded-full transition-all duration-1000 ease-out"
-          style={{ width: `${width}%`, background: "linear-gradient(90deg, #00c8b4, #6090d6)" }}
+          style={{ width: `${width}%`, background: "linear-gradient(90deg, var(--color-accent), #ffb020)" }}
         />
       </div>
     </div>

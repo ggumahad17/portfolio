@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { Project } from "./ProjectCard";
+import Icon from "@/components/ui/Icon";
 
 export default function ProjectCaseStudy({ project }: { project: Project }) {
   const cs = (project as any).caseStudy as {
@@ -39,7 +40,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
           <div className="flex items-center gap-2 flex-wrap mb-4">
             <span
               className="text-xs font-mono px-2.5 py-1 rounded-full"
-              style={{ backgroundColor: "rgba(0,200,180,0.08)", border: "1px solid rgba(0,200,180,0.2)", color: "#00c8b4" }}
+              style={{ backgroundColor: "rgba(59,158,255,0.1)", border: "1px solid rgba(59,158,255,0.2)", color: "var(--color-accent)" }}
             >
               {project.category}
             </span>
@@ -47,7 +48,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
               <span
                 key={tag}
                 className="text-xs font-mono px-2.5 py-1 rounded-md"
-                style={{ backgroundColor: "rgba(18,45,92,0.6)", border: "1px solid rgba(18,45,92,0.8)", color: "var(--color-text-secondary)" }}
+                style={{ backgroundColor: "var(--color-chip-bg)", border: "1px solid var(--color-chip-border)", color: "var(--color-text-secondary)" }}
               >
                 {tag}
               </span>
@@ -66,7 +67,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
         {project.image && !imgError ? (
           <div
             className="w-full rounded-2xl overflow-hidden mb-12"
-            style={{ border: "1px solid rgba(0,200,180,0.2)", maxHeight: "420px" }}
+            style={{ border: "1px solid rgba(59,158,255,0.2)", maxHeight: "420px" }}
           >
             <img
               src={project.image}
@@ -80,11 +81,11 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
             className="w-full rounded-2xl flex items-center justify-center mb-12"
             style={{
               height: "220px",
-              background: "linear-gradient(135deg, rgba(0,200,180,0.1), rgba(18,45,92,0.4), rgba(240,165,0,0.08))",
-              border: "1px solid rgba(18,45,92,0.6)",
+              background: "linear-gradient(135deg, rgba(59,158,255,0.1), var(--color-section-alt), rgba(255,176,32,0.08))",
+              border: "1px solid var(--color-border)",
             }}
           >
-            <span className="text-5xl opacity-40">🚀</span>
+            <Icon name="rocket" className="w-12 h-12 opacity-40" />
           </div>
         )}
 
@@ -110,7 +111,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
                 <ul className="flex flex-col gap-2">
                   {cs.problem.map((line, i) => (
                     <li key={i} className="flex gap-3 text-base leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-                      <span style={{ color: "#f0a500" }}>—</span>
+                      <span style={{ color: "#ffb020" }}>—</span>
                       {line}
                     </li>
                   ))}
@@ -126,7 +127,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
                 <ul className="flex flex-col gap-2">
                   {cs.solution.map((line, i) => (
                     <li key={i} className="flex gap-3 text-base leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
-                      <span style={{ color: "#00c8b4" }}>—</span>
+                      <span style={{ color: "var(--color-accent)" }}>—</span>
                       {line}
                     </li>
                   ))}
@@ -149,7 +150,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
           {/* Sidebar */}
           <div className="flex flex-col gap-6">
             {cs.techStack && cs.techStack.length > 0 && (
-              <div className="card p-6" style={{ border: "1px solid rgba(18,45,92,0.6)" }}>
+              <div className="card p-6">
                 <p className="text-xs font-mono uppercase tracking-widest mb-4" style={{ color: "var(--color-text-muted)" }}>
                   Tech Stack
                 </p>
@@ -158,7 +159,7 @@ export default function ProjectCaseStudy({ project }: { project: Project }) {
                     <span
                       key={t}
                       className="text-xs font-mono px-2.5 py-1 rounded-md"
-                      style={{ backgroundColor: "rgba(18,45,92,0.6)", border: "1px solid rgba(18,45,92,0.8)", color: "var(--color-text-secondary)" }}
+                      style={{ backgroundColor: "var(--color-chip-bg)", border: "1px solid var(--color-chip-border)", color: "var(--color-text-secondary)" }}
                     >
                       {t}
                     </span>

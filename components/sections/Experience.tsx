@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import content from "@/data/content.json";
+import Icon from "@/components/ui/Icon";
 
 /* ============================================================
    EXPERIENCE / TIMELINE SECTION
@@ -28,14 +29,14 @@ export default function Experience() {
     <section
       id="experience"
       className="section-padding relative overflow-hidden"
-      style={{ backgroundColor: "rgba(7,20,40,0.4)" }}
+      style={{ backgroundColor: "var(--color-section-alt)" }}
     >
       {/* Top border accent */}
       <div
         className="absolute left-0 top-0 w-full h-px pointer-events-none"
         style={{
           background:
-            "linear-gradient(90deg, transparent, rgba(18,45,92,0.8), rgba(0,200,180,0.3), rgba(18,45,92,0.8), transparent)",
+            "linear-gradient(90deg, transparent, var(--color-border), rgba(59,158,255,0.3), var(--color-border), transparent)",
         }}
       />
 
@@ -61,8 +62,8 @@ export default function Experience() {
             <div
               className="flex rounded-xl p-1 gap-1"
               style={{
-                backgroundColor: "rgba(7,20,40,0.8)",
-                border: "1px solid rgba(18,45,92,0.6)",
+                backgroundColor: "var(--color-surface-2)",
+                border: "1px solid var(--color-border)",
               }}
             >
               {(["work", "education"] as const).map((t) => (
@@ -72,12 +73,12 @@ export default function Experience() {
                   className="px-6 py-2.5 rounded-lg text-sm font-medium capitalize transition-all duration-300"
                   style={{
                     backgroundColor:
-                      tab === t ? "rgba(0,200,180,0.15)" : "transparent",
-                    color: tab === t ? "#00c8b4" : "var(--color-text-secondary)",
-                    border: tab === t ? "1px solid rgba(0,200,180,0.3)" : "1px solid transparent",
+                      tab === t ? "rgba(59,158,255,0.15)" : "transparent",
+                    color: tab === t ? "var(--color-accent)" : "var(--color-text-secondary)",
+                    border: tab === t ? "1px solid rgba(59,158,255,0.3)" : "1px solid transparent",
                   }}
                 >
-                  {t === "work" ? "💼 Work" : "🎓 Education"}
+                  {t === "work" ? <><Icon name="briefcase" className="inline w-3.5 h-3.5 mr-1 -mt-0.5" /> Work</> : <><Icon name="graduation-cap" className="inline w-3.5 h-3.5 mr-1 -mt-0.5" /> Education</>}
                 </button>
               ))}
             </div>
@@ -132,14 +133,14 @@ function TimelineItem({
       <div
         className="absolute -left-10 top-1 w-5 h-5 rounded-full flex items-center justify-center transition-all duration-300"
         style={{
-          border: `2px solid ${hovered ? "#00c8b4" : "rgba(18,45,92,0.9)"}`,
-          backgroundColor: hovered ? "rgba(0,200,180,0.2)" : "var(--color-bg)",
-          boxShadow: hovered ? "0 0 12px rgba(0,200,180,0.4)" : "none",
+          border: `2px solid ${hovered ? "var(--color-accent)" : "var(--color-border)"}`,
+          backgroundColor: hovered ? "rgba(59,158,255,0.2)" : "var(--color-bg)",
+          boxShadow: hovered ? "0 0 12px rgba(59,158,255,0.4)" : "none",
         }}
       >
         <div
           className="w-2 h-2 rounded-full transition-all duration-300"
-          style={{ backgroundColor: hovered ? "#00c8b4" : "rgba(18,45,92,0.9)" }}
+          style={{ backgroundColor: hovered ? "var(--color-accent)" : "var(--color-neutral-fill)" }}
         />
       </div>
 
@@ -147,7 +148,7 @@ function TimelineItem({
       <div
         className="card p-5 transition-all duration-300"
         style={{
-          borderColor: hovered ? "rgba(0,200,180,0.3)" : "rgba(18,45,92,0.6)",
+          borderColor: hovered ? "rgba(59,158,255,0.3)" : "var(--color-border)",
           transform: hovered ? "translateX(4px)" : "translateX(0)",
         }}
         onMouseEnter={() => setHovered(true)}
@@ -163,9 +164,9 @@ function TimelineItem({
           <span
             className="text-xs font-mono px-2 py-1 rounded-full flex-shrink-0"
             style={{
-              backgroundColor: "rgba(0,200,180,0.08)",
-              border: "1px solid rgba(0,200,180,0.2)",
-              color: "#00c8b4",
+              backgroundColor: "rgba(59,158,255,0.1)",
+              border: "1px solid rgba(59,158,255,0.2)",
+              color: "var(--color-accent)",
             }}
           >
             {item.period}
@@ -173,7 +174,7 @@ function TimelineItem({
         </div>
         <p
           className="text-sm font-medium mb-3"
-          style={{ color: "#00c8b4" }}
+          style={{ color: "var(--color-accent)" }}
         >
           {item.company}
         </p>

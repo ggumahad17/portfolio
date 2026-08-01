@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import postsData from "@/data/posts.json";
+import Icon from "@/components/ui/Icon";
 
 /* ============================================================
    BLOG SECTION (/blog)
@@ -38,9 +39,8 @@ export default function Blog() {
         {posts.length === 0 ? (
           <div
             className="card max-w-xl mx-auto p-10 text-center"
-            style={{ border: "1px solid rgba(18,45,92,0.6)" }}
           >
-            <span className="text-4xl mb-4 inline-block opacity-60">✍️</span>
+            <Icon name="pen-line" className="w-9 h-9 mb-4 inline-block opacity-60" />
             <h3 className="text-lg font-display font-semibold mb-2" style={{ color: "var(--color-text-primary)" }}>
               First posts are in the works
             </h3>
@@ -59,7 +59,6 @@ export default function Blog() {
                 key={post.slug}
                 href={`/blog/${post.slug}`}
                 className="card card-hover p-6 flex flex-col gap-3"
-                style={{ border: "1px solid rgba(18,45,92,0.6)" }}
               >
                 <p className="text-xs font-mono" style={{ color: "var(--color-text-muted)" }}>{post.date}</p>
                 <h3 className="text-lg font-display font-semibold" style={{ color: "var(--color-text-primary)" }}>
@@ -73,7 +72,7 @@ export default function Blog() {
                     <span
                       key={tag}
                       className="text-xs font-mono px-2.5 py-1 rounded-md"
-                      style={{ backgroundColor: "rgba(18,45,92,0.6)", border: "1px solid rgba(18,45,92,0.8)", color: "var(--color-text-secondary)" }}
+                      style={{ backgroundColor: "var(--color-chip-bg)", border: "1px solid var(--color-chip-border)", color: "var(--color-text-secondary)" }}
                     >
                       {tag}
                     </span>

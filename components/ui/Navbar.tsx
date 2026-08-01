@@ -30,14 +30,29 @@ export default function Navbar() {
       }`}
     >
       <div className="container-max flex items-center justify-between px-4 md:px-8 lg:px-16">
-        {/* Logo */}
-        <Link href="/" aria-label="Gerald Gumahad Portfolio">
+        {/* Logo — continuous glow-pulse animation, no cut on loop */}
+        <Link href="/" aria-label="Gerald Gumahad Portfolio" style={{ display: "inline-flex", alignItems: "center" }}>
           <img
             src="/images/logo.webp"
             alt="GG Portfolio Logo"
-            style={{ height: "36px", width: "auto" }}
+            style={{
+              height: "36px",
+              width: "auto",
+              animation: "logo-glow 3s ease-in-out infinite",
+              filter: "drop-shadow(0 0 6px rgba(59,158,255,0.55))",
+              transition: "transform 0.3s ease",
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1.08)"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLImageElement).style.transform = "scale(1)"; }}
           />
         </Link>
+        <style>{`
+          @keyframes logo-glow {
+            0%   { filter: drop-shadow(0 0 4px rgba(59,158,255,0.40)); }
+            50%  { filter: drop-shadow(0 0 12px rgba(59,158,255,0.80)) drop-shadow(0 0 20px rgba(59,158,255,0.30)); }
+            100% { filter: drop-shadow(0 0 4px rgba(59,158,255,0.40)); }
+          }
+        `}</style>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
@@ -46,11 +61,11 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className="text-sm font-medium transition-colors duration-200 relative group"
-              style={{ color: isActive(link.href) ? "#00c8b4" : "var(--color-text-secondary)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#00c8b4")}
+              style={{ color: isActive(link.href) ? "var(--color-accent)" : "var(--color-text-secondary)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-accent)")}
               onMouseLeave={(e) =>
                 (e.currentTarget.style.color = isActive(link.href)
-                  ? "#00c8b4"
+                  ? "var(--color-accent)"
                   : "var(--color-text-secondary)")
               }
             >
@@ -135,7 +150,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className="text-base font-medium py-2"
-              style={{ color: isActive(link.href) ? "#00c8b4" : "var(--color-text-secondary)" }}
+              style={{ color: isActive(link.href) ? "var(--color-accent)" : "var(--color-text-secondary)" }}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}

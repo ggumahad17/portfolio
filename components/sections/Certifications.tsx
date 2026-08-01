@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Icon from "@/components/ui/Icon";
 
 /* ============================================================
    CERTIFICATIONS SECTION
@@ -15,7 +16,7 @@ const certs = [
     title: "Google Data Analytics Professional Certificate",
     issuer: "Google / Coursera",
     date: "March 8, 2026",
-    logo: "🎓",
+    logo: "graduation-cap",
     color: "#4285F4",
     colorBg: "rgba(66,133,244,0.08)",
     colorBorder: "rgba(66,133,244,0.25)",
@@ -31,7 +32,7 @@ const certs = [
     title: "Data Analytics Essentials",
     issuer: "Cisco Networking Academy",
     date: "March 23, 2026",
-    logo: "📊",
+    logo: "bar-chart",
     color: "#00bceb",
     colorBg: "rgba(0,188,235,0.08)",
     colorBorder: "rgba(0,188,235,0.25)",
@@ -47,10 +48,10 @@ const certs = [
     title: "HTML Essentials",
     issuer: "Cisco Networking Academy",
     date: "May 13, 2026",
-    logo: "🌐",
-    color: "#00c8b4",
-    colorBg: "rgba(0,200,180,0.08)",
-    colorBorder: "rgba(0,200,180,0.25)",
+    logo: "globe",
+    color: "var(--color-accent)",
+    colorBg: "rgba(59,158,255,0.1)",
+    colorBorder: "rgba(59,158,255,0.25)",
     description:
       "Credential for completing HTML Essentials — covering structured HTML documents, semantic markup, forms, accessibility, and the role of HTML in the web development process.",
     tags: ["HTML", "Web Development", "Accessibility", "CSS", "JavaScript"],
@@ -77,14 +78,14 @@ export default function Certifications() {
     <section
       id="certifications"
       className="section-padding relative overflow-hidden"
-      style={{ backgroundColor: "rgba(7,20,40,0.4)" }}
+      style={{ backgroundColor: "var(--color-section-alt)" }}
     >
       {/* Top border accent */}
       <div
         className="absolute left-0 top-0 w-full h-px pointer-events-none"
         style={{
           background:
-            "linear-gradient(90deg, transparent, rgba(18,45,92,0.8), rgba(0,200,180,0.3), rgba(18,45,92,0.8), transparent)",
+            "linear-gradient(90deg, transparent, var(--color-border), rgba(59,158,255,0.3), var(--color-border), transparent)",
         }}
       />
 
@@ -99,20 +100,41 @@ export default function Certifications() {
           {/* Header */}
           <div className="text-center mb-12">
             <div className="section-tag mx-auto w-fit">
-              <span>05</span>
-              <span>Certifications</span>
+              <span>01</span>
+              <span>Certificates</span>
             </div>
             <h2 className="section-heading">
               Credentials &{" "}
-              <span className="text-gradient">Achievements</span>
+              <span className="text-gradient">Continuous Learning</span>
             </h2>
             <p
-              className="max-w-lg mx-auto text-base"
+              className="max-w-2xl mx-auto text-base leading-relaxed"
               style={{ color: "var(--color-text-secondary)" }}
             >
-              Professional certifications that validate my skills in data
-              analytics and web technologies.
+              I treat certifications as proof of work, not just a line on a
+              resume — each one below maps to skills I actually use day to
+              day, from cleaning and modeling data to shipping accessible
+              HTML. I picked Google's Data Analytics program and Cisco's
+              Networking Academy courses specifically to pressure-test the
+              fundamentals behind my SEO and analytics work: statistics,
+              SQL, spreadsheets, and the front-end basics that make a page
+              rank in the first place. Every credential here is downloadable
+              as a PDF, and where the issuer supports it, verifiable
+              independently on Credly.
             </p>
+          </div>
+
+          {/* Stats strip */}
+          <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto mb-12">
+            <StatBlock value={certs.length.toString()} label="Certificates" />
+            <StatBlock
+              value={Array.from(new Set(certs.map((c) => c.issuer))).length.toString()}
+              label="Issuing Bodies"
+            />
+            <StatBlock
+              value={Array.from(new Set(certs.flatMap((c) => c.tags))).length.toString()}
+              label="Skills Covered"
+            />
           </div>
 
           {/* Cert cards */}
@@ -127,6 +149,30 @@ export default function Certifications() {
             ))}
           </div>
 
+          {/* Why certifications */}
+          <div className="max-w-2xl mx-auto mt-14 mb-10 text-center">
+            <h3
+              className="font-display font-semibold text-lg mb-3"
+              style={{ color: "var(--color-text-primary)" }}
+            >
+              Why I keep earning these
+            </h3>
+            <p
+              className="text-sm leading-relaxed"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              Coming from a chemical engineering background, I didn't have a
+              formal computer science or marketing degree to point to — so
+              I built one course at a time. Google's Data Analytics program
+              gave me a repeatable process for turning raw data into a
+              decision; Cisco's Data Analytics Essentials reinforced the
+              statistics underneath it; and HTML Essentials made sure the
+              technical SEO recommendations I give are grounded in how a
+              browser and a crawler actually read a page. I'm continuing to
+              add to this list as I take on new SEO and analytics work.
+            </p>
+          </div>
+
           {/* Credly CTA */}
           <div className="mt-10 text-center">
             <a
@@ -135,7 +181,7 @@ export default function Certifications() {
               rel="noopener noreferrer"
               className="btn-outline inline-flex items-center gap-2"
             >
-              <span>🏅</span>
+              <Icon name="award" className="w-4 h-4" />
               Verify My Badges on Credly
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -151,6 +197,25 @@ export default function Certifications() {
         </div>
       </div>
     </section>
+  );
+}
+
+function StatBlock({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="card p-4 text-center">
+      <p
+        className="font-display font-bold text-2xl mb-1"
+        style={{ color: "var(--color-accent)" }}
+      >
+        {value}
+      </p>
+      <p
+        className="text-xs font-mono uppercase tracking-wide"
+        style={{ color: "var(--color-text-muted)" }}
+      >
+        {label}
+      </p>
+    </div>
   );
 }
 
@@ -172,7 +237,7 @@ function CertCard({
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(30px)",
         transition: `all 0.5s ease ${index * 120}ms`,
-        borderColor: hovered ? cert.colorBorder : "rgba(18,45,92,0.6)",
+        borderColor: hovered ? cert.colorBorder : "var(--color-border)",
         boxShadow: hovered
           ? `0 8px 40px ${cert.colorBg}`
           : "none",
@@ -189,15 +254,15 @@ function CertCard({
             border: `1px solid ${cert.colorBorder}`,
           }}
         >
-          {cert.logo}
+          <Icon name={cert.logo} className="w-6 h-6" style={{ color: cert.color }} />
         </div>
         {cert.featured && (
           <span
             className="text-xs font-mono px-2 py-0.5 rounded-full flex-shrink-0"
             style={{
-              backgroundColor: "rgba(240,165,0,0.1)",
-              border: "1px solid rgba(240,165,0,0.3)",
-              color: "#f0a500",
+              backgroundColor: "rgba(255,176,32,0.12)",
+              border: "1px solid rgba(255,176,32,0.35)",
+              color: "#ffb020",
             }}
           >
             Featured
@@ -242,8 +307,8 @@ function CertCard({
             key={tag}
             className="text-xs font-mono px-2 py-0.5 rounded-md"
             style={{
-              backgroundColor: "rgba(18,45,92,0.6)",
-              border: "1px solid rgba(18,45,92,0.8)",
+              backgroundColor: "var(--color-chip-bg)",
+              border: "1px solid var(--color-chip-border)",
               color: "var(--color-text-secondary)",
             }}
           >
@@ -285,12 +350,12 @@ function CertCard({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:opacity-80"
             style={{
-              backgroundColor: "rgba(240,165,0,0.1)",
-              border: "1px solid rgba(240,165,0,0.3)",
-              color: "#f0a500",
+              backgroundColor: "rgba(255,176,32,0.12)",
+              border: "1px solid rgba(255,176,32,0.35)",
+              color: "#ffb020",
             }}
           >
-            <span>🏅</span>
+            <Icon name="award" className="w-4 h-4" />
             View Badge
           </a>
         )}

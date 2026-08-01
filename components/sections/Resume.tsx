@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import content from "@/data/content.json";
+import Icon from "@/components/ui/Icon";
 
 /* ============================================================
    RESUME / CV SECTION (lives on /about, below the About story)
@@ -23,7 +24,7 @@ const certs = [
     title: "Google Data Analytics Professional Certificate",
     issuer: "Google / Coursera",
     date: "March 8, 2026",
-    logo: "🎓",
+    logo: "graduation-cap",
     color: "#4285F4",
     colorBg: "rgba(66,133,244,0.08)",
     colorBorder: "rgba(66,133,244,0.25)",
@@ -36,7 +37,7 @@ const certs = [
     title: "Data Analytics Essentials",
     issuer: "Cisco Networking Academy",
     date: "March 23, 2026",
-    logo: "📊",
+    logo: "bar-chart",
     color: "#00bceb",
     colorBg: "rgba(0,188,235,0.08)",
     colorBorder: "rgba(0,188,235,0.25)",
@@ -49,10 +50,10 @@ const certs = [
     title: "HTML Essentials",
     issuer: "Cisco Networking Academy",
     date: "May 13, 2026",
-    logo: "🌐",
-    color: "#00c8b4",
-    colorBg: "rgba(0,200,180,0.08)",
-    colorBorder: "rgba(0,200,180,0.25)",
+    logo: "globe",
+    color: "var(--color-accent)",
+    colorBg: "rgba(59,158,255,0.1)",
+    colorBorder: "rgba(59,158,255,0.25)",
     tags: ["HTML", "Web Development", "Accessibility", "CSS", "JavaScript"],
     download: "/files/html-essentials-certificate.pdf",
     credly: null as string | null,
@@ -80,11 +81,11 @@ export default function Resume() {
     <section
       id="resume"
       className="section-padding relative overflow-hidden"
-      style={{ backgroundColor: "rgba(7,20,40,0.4)" }}
+      style={{ backgroundColor: "var(--color-section-alt)" }}
     >
       <div
         className="absolute left-0 top-0 w-full h-px pointer-events-none"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(18,45,92,0.8), rgba(0,200,180,0.3), rgba(18,45,92,0.8), transparent)" }}
+        style={{ background: "linear-gradient(90deg, transparent, var(--color-border), rgba(59,158,255,0.3), var(--color-border), transparent)" }}
       />
 
       <div className="container-max" ref={ref}>
@@ -119,7 +120,7 @@ export default function Resume() {
 
           {/* Optional embedded PDF viewer */}
           {showPdf && (
-            <div className="max-w-3xl mx-auto mb-14 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(18,45,92,0.6)" }}>
+            <div className="max-w-3xl mx-auto mb-14 rounded-xl overflow-hidden" style={{ border: "1px solid var(--color-border)" }}>
               <embed
                 src={content.resume.pdf}
                 type="application/pdf"
@@ -132,7 +133,7 @@ export default function Resume() {
             {/* Work experience */}
             <div>
               <h3 className="text-lg font-display font-semibold mb-5 flex items-center gap-2" style={{ color: "var(--color-text-primary)" }}>
-                💼 Work Experience
+                <Icon name="briefcase" className="inline w-4 h-4 mr-1 -mt-0.5" /> Work Experience
               </h3>
               <div className="relative pl-8">
                 <div className="timeline-line" style={{ left: "10px" }} />
@@ -145,7 +146,7 @@ export default function Resume() {
             {/* Education */}
             <div>
               <h3 className="text-lg font-display font-semibold mb-5 flex items-center gap-2" style={{ color: "var(--color-text-primary)" }}>
-                🎓 Education
+                <Icon name="graduation-cap" className="inline w-4 h-4 mr-1 -mt-0.5" /> Education
               </h3>
               <div className="relative pl-8">
                 <div className="timeline-line" style={{ left: "10px" }} />
@@ -159,13 +160,13 @@ export default function Resume() {
           {/* Skills summary */}
           <div className="mb-14">
             <h3 className="text-lg font-display font-semibold mb-5 text-center" style={{ color: "var(--color-text-primary)" }}>
-              🛠️ Core Skills
+              <Icon name="wrench" className="inline w-4 h-4 mr-1 -mt-0.5" /> Core Skills
             </h3>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {content.skills.map((cat) => (
-                <div key={cat.category} className="card p-4" style={{ border: "1px solid rgba(18,45,92,0.6)" }}>
+                <div key={cat.category} className="card p-4">
                   <p className="text-sm font-semibold mb-2 flex items-center gap-2" style={{ color: "var(--color-text-primary)" }}>
-                    <span>{cat.icon}</span> {cat.category}
+                    <Icon name={cat.icon} className="w-4 h-4" style={{ color: "var(--color-accent)" }} /> {cat.category}
                   </p>
                   <ul className="flex flex-col gap-1">
                     {cat.items.map((s) => (
@@ -182,20 +183,19 @@ export default function Resume() {
           {/* Certifications */}
           <div>
             <h3 className="text-lg font-display font-semibold mb-5 text-center" style={{ color: "var(--color-text-primary)" }}>
-              📜 Certifications
+              <Icon name="scroll-text" className="inline w-4 h-4 mr-1 -mt-0.5" /> Certifications
             </h3>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {certs.map((cert) => (
                 <div
                   key={cert.id}
                   className="card flex flex-col gap-3 p-6"
-                  style={{ border: "1px solid rgba(18,45,92,0.6)" }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0"
                     style={{ backgroundColor: cert.colorBg, border: `1px solid ${cert.colorBorder}` }}
                   >
-                    {cert.logo}
+                    <Icon name={cert.logo} className="w-5 h-5" style={{ color: cert.color }} />
                   </div>
                   <h4 className="font-display font-semibold text-sm leading-snug" style={{ color: "var(--color-text-primary)" }}>
                     {cert.title}
@@ -207,7 +207,7 @@ export default function Resume() {
                       <span
                         key={tag}
                         className="text-xs font-mono px-2 py-0.5 rounded-md"
-                        style={{ backgroundColor: "rgba(18,45,92,0.6)", border: "1px solid rgba(18,45,92,0.8)", color: "var(--color-text-secondary)" }}
+                        style={{ backgroundColor: "var(--color-chip-bg)", border: "1px solid var(--color-chip-border)", color: "var(--color-text-secondary)" }}
                       >
                         {tag}
                       </span>
@@ -228,23 +228,26 @@ export default function Resume() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:opacity-80"
-                        style={{ backgroundColor: "rgba(240,165,0,0.1)", border: "1px solid rgba(240,165,0,0.3)", color: "#f0a500" }}
+                        style={{ backgroundColor: "rgba(255,176,32,0.12)", border: "1px solid rgba(255,176,32,0.35)", color: "#ffb020" }}
                       >
-                        🏅 Badge
+                        <Icon name="award" className="inline w-3.5 h-3.5 mr-1 -mt-0.5" /> Badge
                       </a>
                     )}
                   </div>
                 </div>
               ))}
             </div>
-            <div className="text-center">
+            <div className="text-center flex flex-wrap items-center justify-center gap-3">
+              <a href="/certificates" className="btn-primary inline-flex items-center gap-2">
+                <Icon name="scroll-text" className="inline w-4 h-4 mr-1 -mt-0.5" /> View Full Certificate Gallery
+              </a>
               <a
                 href="https://www.credly.com/users/gerald-gumahad/badges#credly"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline inline-flex items-center gap-2"
               >
-                🏅 Verify All Badges on Credly
+                <Icon name="award" className="inline w-4 h-4 mr-1 -mt-0.5" /> Verify All Badges on Credly
               </a>
             </div>
           </div>
@@ -274,21 +277,21 @@ function ResumeItem({
     >
       <div
         className="absolute -left-8 top-1 w-4 h-4 rounded-full"
-        style={{ border: "2px solid rgba(0,200,180,0.6)", backgroundColor: "var(--color-bg)" }}
+        style={{ border: "2px solid rgba(59,158,255,0.6)", backgroundColor: "var(--color-bg)" }}
       />
-      <div className="card p-4" style={{ borderColor: "rgba(18,45,92,0.6)" }}>
+      <div className="card p-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
           <h4 className="font-display font-semibold text-sm" style={{ color: "var(--color-text-primary)" }}>
             {item.role}
           </h4>
           <span
             className="text-xs font-mono px-2 py-0.5 rounded-full flex-shrink-0 w-fit"
-            style={{ backgroundColor: "rgba(0,200,180,0.08)", border: "1px solid rgba(0,200,180,0.2)", color: "#00c8b4" }}
+            style={{ backgroundColor: "rgba(59,158,255,0.1)", border: "1px solid rgba(59,158,255,0.2)", color: "var(--color-accent)" }}
           >
             {item.period}
           </span>
         </div>
-        <p className="text-xs font-medium mb-2" style={{ color: "#00c8b4" }}>{item.company}</p>
+        <p className="text-xs font-medium mb-2" style={{ color: "var(--color-accent)" }}>{item.company}</p>
         <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
           {item.description}
         </p>

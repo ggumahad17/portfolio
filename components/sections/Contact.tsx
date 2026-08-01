@@ -1,5 +1,6 @@
 "use client";
 
+import Icon from "@/components/ui/Icon";
 import { useEffect, useRef, useState } from "react";
 import content from "@/data/content.json";
 
@@ -82,7 +83,7 @@ export default function Contact() {
       <div
         className="absolute left-1/2 bottom-0 w-96 h-px pointer-events-none"
         style={{
-          background: "linear-gradient(90deg, transparent, rgba(0,200,180,0.4), transparent)",
+          background: "linear-gradient(90deg, transparent, rgba(59,158,255,0.4), transparent)",
           transform: "translateX(-50%)",
         }}
       />
@@ -117,19 +118,19 @@ export default function Contact() {
               {/* Info cards */}
               {[
                 {
-                  icon: "📧",
+                  icon: "mail",
                   label: "Email",
                   value: contact.email,
                   href: `mailto:${contact.email}`,
                 },
                 {
-                  icon: "📱",
+                  icon: "phone",
                   label: "WhatsApp",
                   value: contact.phone,
                   href: `https://wa.me/639457938546`,
                 },
                 {
-                  icon: "📍",
+                  icon: "map-pin",
                   label: "Location",
                   value: contact.location,
                   href: null,
@@ -138,11 +139,10 @@ export default function Contact() {
                 <div
                   key={item.label}
                   className="card p-4 flex items-center gap-4"
-                  style={{ border: "1px solid rgba(18,45,92,0.6)" }}
                 >
-                  <span className="text-xl w-10 h-10 flex items-center justify-center rounded-lg flex-shrink-0"
-                    style={{ backgroundColor: "rgba(0,200,180,0.08)", border: "1px solid rgba(0,200,180,0.15)" }}>
-                    {item.icon}
+                  <span className="w-10 h-10 flex items-center justify-center rounded-lg flex-shrink-0"
+                    style={{ backgroundColor: "rgba(59,158,255,0.1)", border: "1px solid rgba(59,158,255,0.15)" }}>
+                    <Icon name={item.icon} className="w-4 h-4" style={{ color: "var(--color-accent)" }} />
                   </span>
                   <div>
                     <p className="text-xs font-mono mb-0.5" style={{ color: "var(--color-text-muted)" }}>
@@ -153,7 +153,7 @@ export default function Contact() {
                         href={item.href}
                         className="text-sm font-medium transition-colors duration-200"
                         style={{ color: "var(--color-text-primary)" }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = "#00c8b4")}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-accent)")}
                         onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-primary)")}
                       >
                         {item.value}
@@ -185,19 +185,19 @@ export default function Contact() {
                       aria-label={s.label}
                       className="w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 hover:-translate-y-1"
                       style={{
-                        backgroundColor: "rgba(18,45,92,0.6)",
-                        border: "1px solid rgba(18,45,92,0.8)",
+                        backgroundColor: "var(--color-chip-bg)",
+                        border: "1px solid var(--color-chip-border)",
                         color: "var(--color-text-secondary)",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = "rgba(0,200,180,0.5)";
-                        e.currentTarget.style.color = "#00c8b4";
-                        e.currentTarget.style.backgroundColor = "rgba(0,200,180,0.1)";
+                        e.currentTarget.style.borderColor = "rgba(59,158,255,0.5)";
+                        e.currentTarget.style.color = "var(--color-accent)";
+                        e.currentTarget.style.backgroundColor = "rgba(59,158,255,0.1)";
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = "rgba(18,45,92,0.8)";
+                        e.currentTarget.style.borderColor = "var(--color-chip-border)";
                         e.currentTarget.style.color = "var(--color-text-secondary)";
-                        e.currentTarget.style.backgroundColor = "rgba(18,45,92,0.6)";
+                        e.currentTarget.style.backgroundColor = "var(--color-chip-bg)";
                       }}
                     >
                       {socialIcons[s.icon]}
@@ -209,17 +209,14 @@ export default function Contact() {
 
             {/* Right — contact form */}
             <div className="lg:col-span-3">
-              <div
-                className="card p-6 md:p-8"
-                style={{ border: "1px solid rgba(18,45,92,0.6)" }}
-              >
+              <div className="card p-6 md:p-8">
                 {status === "sent" ? (
                   <div className="flex flex-col items-center justify-center h-full py-10 gap-4 text-center">
                     <div
                       className="w-16 h-16 rounded-full flex items-center justify-center text-3xl"
-                      style={{ backgroundColor: "rgba(0,200,180,0.1)", border: "2px solid rgba(0,200,180,0.4)" }}
+                      style={{ backgroundColor: "rgba(59,158,255,0.1)", border: "2px solid rgba(59,158,255,0.4)" }}
                     >
-                      ✅
+                      <Icon name="check-circle" className="w-6 h-6" style={{ color: "var(--color-accent)" }} />
                     </div>
                     <h3 className="text-xl font-display font-semibold" style={{ color: "var(--color-text-primary)" }}>
                       Message sent!

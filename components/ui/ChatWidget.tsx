@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Icon from "@/components/ui/Icon";
 
 /* ============================================================
    FAQ CHAT WIDGET — 100% FREE, NO API NEEDED
@@ -10,7 +11,7 @@ import { useState } from "react";
 const FAQ_DATA = [
   {
     category: "About Gerald",
-    icon: "👤",
+    icon: "user",
     questions: [
       { q: "Who is Gerald?", a: "Gerald Gumahad is a data-driven professional from Cebu City, Philippines, with a background in Chemical Engineering. He's now focused on Data Analytics and SEO, helping businesses make smarter decisions based on data." },
       { q: "What does he do?", a: "Gerald works with data — analyzing it, cleaning it, and turning it into insights that improve performance, whether in operations or digital marketing. He also specializes in SEO including keyword research, content optimization, and performance tracking." },
@@ -19,7 +20,7 @@ const FAQ_DATA = [
   },
   {
     category: "Skills & Tools",
-    icon: "🛠️",
+    icon: "wrench",
     questions: [
       { q: "What are his core skills?", a: "Gerald's core skills include data analysis, Excel and Google Sheets, SEO research, data visualization, and performance tracking. He combines technical thinking with real-world problem-solving." },
       { q: "What tools does he use?", a: "For data: Excel VBA, Google Sheets, Power BI, Minitab, GA4. For SEO: Semrush, Google Search Console, Google PageSpeed Insights. For project management: ClickUp, Asana, Slack, Microsoft Teams, Google Workspace." },
@@ -29,7 +30,7 @@ const FAQ_DATA = [
   },
   {
     category: "Experience",
-    icon: "💼",
+    icon: "briefcase",
     questions: [
       { q: "Where has he worked?", a: "Gerald is currently an SEO Intern at Growth Orbit Marketing Agency (April 2026–Present). Previously: SEO Assistant at Zenith Collective (2025), Researcher at DOST (2024–2025), and Process Engineer at Taganito HPAL Nickel Corporation (2020–2023)." },
       { q: "What's his educational background?", a: "Gerald holds a Bachelor of Science in Chemical Engineering from Mindanao State University – Iligan Institute of Technology (2015–2019), and a Diploma in Chemical Engineering Technology from the same institution (2012–2015)." },
@@ -38,7 +39,7 @@ const FAQ_DATA = [
   },
   {
     category: "Availability",
-    icon: "📅",
+    icon: "calendar",
     questions: [
       { q: "Is he available for work?", a: "Yes! Gerald is open to freelance, contract, or full-time opportunities depending on the project. He's also open to remote and international work." },
       { q: "When can he start?", a: "Gerald can start within one week after an offer is made." },
@@ -48,7 +49,7 @@ const FAQ_DATA = [
   },
   {
     category: "Contact",
-    icon: "📩",
+    icon: "mail",
     questions: [
       { q: "How can I contact him?", a: "You can reach Gerald through the Contact section on this website, or directly via email at gerald.gumahad17@gmail.com or WhatsApp at +63 945 793 8546." },
       { q: "Can he work with small businesses?", a: "Absolutely! Gerald can help small businesses improve their online visibility using practical, data-driven SEO strategies tailored to their goals and budget." },
@@ -89,42 +90,42 @@ export default function ChatWidget() {
             height: "520px",
             borderRadius: "16px",
             overflow: "hidden",
-            boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,200,180,0.2)",
-            background: "#040d1a",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.35), 0 0 0 1px rgba(59,158,255,0.2)",
+            background: "var(--color-surface)",
           }}
         >
           {/* Header */}
           <div
             className="flex items-center justify-between px-4 py-3 flex-shrink-0"
             style={{
-              background: "linear-gradient(135deg, #071428, #0a1d3a)",
-              borderBottom: "1px solid rgba(0,200,180,0.2)",
+              background: "var(--color-surface-2)",
+              borderBottom: "1px solid var(--color-border)",
             }}
           >
             <div className="flex items-center gap-3">
               <div
                 className="w-9 h-9 rounded-full flex items-center justify-center text-lg flex-shrink-0"
                 style={{
-                  background: "linear-gradient(135deg, rgba(0,200,180,0.2), rgba(18,45,92,0.6))",
-                  border: "1px solid rgba(0,200,180,0.3)",
+                  background: "linear-gradient(135deg, rgba(59,158,255,0.2), var(--color-chip-bg))",
+                  border: "1px solid rgba(59,158,255,0.3)",
                 }}
               >
-                🤖
+                <Icon name="bot" className="w-5 h-5" style={{ color: "var(--color-accent)" }} />
               </div>
               <div>
-                <p className="text-sm font-semibold" style={{ color: "#e8edf5" }}>
+                <p className="text-sm font-semibold" style={{ color: "var(--color-text-primary)" }}>
                   Gerald's Assistant
                 </p>
                 <div className="flex items-center gap-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  <p className="text-xs" style={{ color: "#00c8b4" }}>Ask me anything!</p>
+                  <p className="text-xs" style={{ color: "var(--color-accent)" }}>Ask me anything!</p>
                 </div>
               </div>
             </div>
             <button
               onClick={() => setOpen(false)}
-              className="w-7 h-7 flex items-center justify-center rounded-lg transition-all duration-200 hover:bg-white/10"
-              style={{ color: "#8ba3c7" }}
+              className="w-7 h-7 flex items-center justify-center rounded-lg transition-all duration-200 hover:bg-black/10 dark:hover:bg-white/10"
+              style={{ color: "var(--color-text-muted)" }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256">
                 <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" />
@@ -135,10 +136,10 @@ export default function ChatWidget() {
           {/* Search */}
           <div
             className="px-3 py-2 flex-shrink-0"
-            style={{ borderBottom: "1px solid rgba(18,45,92,0.5)", background: "rgba(7,20,40,0.9)" }}
+            style={{ borderBottom: "1px solid var(--color-border)", background: "var(--color-surface)" }}
           >
-            <div className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{ background: "rgba(18,45,92,0.4)", border: "1px solid rgba(18,45,92,0.6)" }}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="#4a6490" viewBox="0 0 256 256">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{ background: "var(--color-chip-bg)", border: "1px solid var(--color-border)" }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="var(--color-text-muted)" viewBox="0 0 256 256">
                 <path d="M229.66,218.34l-50.07-50.07a88,88,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.31ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z" />
               </svg>
               <input
@@ -147,10 +148,10 @@ export default function ChatWidget() {
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search questions..."
                 className="flex-1 text-xs outline-none bg-transparent"
-                style={{ color: "#e8edf5" }}
+                style={{ color: "var(--color-text-primary)" }}
               />
               {search && (
-                <button onClick={() => setSearch("")} style={{ color: "#4a6490" }}>
+                <button onClick={() => setSearch("")} style={{ color: "var(--color-text-muted)" }}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 256 256">
                     <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" />
                   </svg>
@@ -163,7 +164,7 @@ export default function ChatWidget() {
           {!search && (
             <div
               className="flex gap-1 px-3 py-2 flex-shrink-0 overflow-x-auto"
-              style={{ borderBottom: "1px solid rgba(18,45,92,0.5)", background: "rgba(7,20,40,0.8)" }}
+              style={{ borderBottom: "1px solid var(--color-border)", background: "var(--color-surface-2)" }}
             >
               {FAQ_DATA.map((cat, i) => (
                 <button
@@ -171,12 +172,12 @@ export default function ChatWidget() {
                   onClick={() => { setActiveCategory(i); setOpenQuestion(null); }}
                   className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 flex-shrink-0"
                   style={{
-                    background: activeCategory === i ? "rgba(0,200,180,0.15)" : "transparent",
-                    border: activeCategory === i ? "1px solid rgba(0,200,180,0.4)" : "1px solid transparent",
-                    color: activeCategory === i ? "#00c8b4" : "#8ba3c7",
+                    background: activeCategory === i ? "rgba(59,158,255,0.15)" : "transparent",
+                    border: activeCategory === i ? "1px solid rgba(59,158,255,0.4)" : "1px solid transparent",
+                    color: activeCategory === i ? "var(--color-accent)" : "var(--color-text-secondary)",
                   }}
                 >
-                  <span>{cat.icon}</span>
+                  <Icon name={cat.icon} className="w-3.5 h-3.5" />
                   <span className="hidden sm:inline">{cat.category}</span>
                 </button>
               ))}
@@ -187,30 +188,30 @@ export default function ChatWidget() {
           <div className="flex-1 overflow-y-auto px-3 py-3 flex flex-col gap-2">
             {filtered && filtered.length === 0 ? (
               <div className="flex flex-col items-center justify-center h-full gap-3 text-center">
-                <span className="text-3xl">🔍</span>
-                <p className="text-sm" style={{ color: "#8ba3c7" }}>No results found.</p>
-                <p className="text-xs" style={{ color: "#4a6490" }}>Try a different keyword or browse the categories above.</p>
+                <Icon name="search" className="w-8 h-8" style={{ color: "var(--color-text-muted)" }} />
+                <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>No results found.</p>
+                <p className="text-xs" style={{ color: "var(--color-text-muted)" }}>Try a different keyword or browse the categories above.</p>
               </div>
             ) : (
               displayQuestions.map((item, i) => (
                 <div
                   key={i}
                   className="rounded-xl overflow-hidden transition-all duration-200"
-                  style={{ border: openQuestion === i ? "1px solid rgba(0,200,180,0.3)" : "1px solid rgba(18,45,92,0.5)" }}
+                  style={{ border: openQuestion === i ? "1px solid rgba(59,158,255,0.3)" : "1px solid var(--color-border)" }}
                 >
                   <button
                     onClick={() => setOpenQuestion(openQuestion === i ? null : i)}
                     className="w-full flex items-center justify-between px-3 py-2.5 text-left transition-all duration-200"
-                    style={{ background: openQuestion === i ? "rgba(0,200,180,0.08)" : "rgba(7,20,40,0.6)" }}
+                    style={{ background: openQuestion === i ? "rgba(59,158,255,0.1)" : "var(--color-surface-2)" }}
                   >
-                    <span className="text-xs font-medium pr-2" style={{ color: openQuestion === i ? "#00c8b4" : "#e8edf5" }}>
+                    <span className="text-xs font-medium pr-2" style={{ color: openQuestion === i ? "var(--color-accent)" : "var(--color-text-primary)" }}>
                       {item.q}
                     </span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="14"
                       height="14"
-                      fill="#00c8b4"
+                      fill="var(--color-accent)"
                       viewBox="0 0 256 256"
                       style={{ transform: openQuestion === i ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s ease", flexShrink: 0 }}
                     >
@@ -218,8 +219,8 @@ export default function ChatWidget() {
                     </svg>
                   </button>
                   {openQuestion === i && (
-                    <div className="px-3 py-2.5" style={{ background: "rgba(4,13,26,0.8)", borderTop: "1px solid rgba(18,45,92,0.4)" }}>
-                      <p className="text-xs leading-relaxed" style={{ color: "#8ba3c7" }}>{item.a}</p>
+                    <div className="px-3 py-2.5" style={{ background: "var(--color-bg)", borderTop: "1px solid var(--color-border)" }}>
+                      <p className="text-xs leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>{item.a}</p>
                     </div>
                   )}
                 </div>
@@ -229,18 +230,18 @@ export default function ChatWidget() {
             {/* Contact CTA at bottom */}
             <div
               className="mt-2 p-3 rounded-xl text-center"
-              style={{ background: "rgba(0,200,180,0.06)", border: "1px solid rgba(0,200,180,0.15)" }}
+              style={{ background: "rgba(59,158,255,0.06)", border: "1px solid rgba(59,158,255,0.15)" }}
             >
-              <p className="text-xs mb-2" style={{ color: "#8ba3c7" }}>
+              <p className="text-xs mb-2" style={{ color: "var(--color-text-secondary)" }}>
                 Still have questions?
               </p>
               <a
                 href="/contact"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg transition-all duration-200"
-                style={{ background: "rgba(0,200,180,0.15)", border: "1px solid rgba(0,200,180,0.3)", color: "#00c8b4" }}
+                style={{ background: "rgba(59,158,255,0.15)", border: "1px solid rgba(59,158,255,0.3)", color: "var(--color-accent)" }}
               >
-                📩 Contact Gerald directly
+                <Icon name="mail" className="w-3.5 h-3.5" /> Contact Gerald directly
               </a>
             </div>
           </div>
@@ -252,14 +253,14 @@ export default function ChatWidget() {
         onClick={() => { setOpen(!open); setShowNotification(false); }}
         className="fixed bottom-6 right-4 md:right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
         style={{
-          background: open ? "rgba(7,20,40,0.9)" : "linear-gradient(135deg, #00c8b4, #3b6dbf)",
-          boxShadow: "0 8px 30px rgba(0,200,180,0.4)",
-          border: "2px solid rgba(0,200,180,0.3)",
+          background: open ? "var(--color-surface-2)" : "linear-gradient(135deg, var(--color-accent), #3b6dbf)",
+          boxShadow: "0 8px 30px rgba(59,158,255,0.4)",
+          border: "2px solid rgba(59,158,255,0.3)",
         }}
         aria-label="Open FAQ assistant"
       >
         {open ? (
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#00c8b4" viewBox="0 0 256 256">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="var(--color-accent)" viewBox="0 0 256 256">
             <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" />
           </svg>
         ) : (
@@ -274,13 +275,15 @@ export default function ChatWidget() {
         <div
           className="fixed bottom-16 right-4 md:right-6 z-50 px-3 py-1.5 rounded-full text-xs font-medium animate-bounce cursor-pointer"
           style={{
-            background: "rgba(7,20,40,0.95)",
-            border: "1px solid rgba(0,200,180,0.3)",
-            color: "#00c8b4",
+            background: "var(--color-surface-2)",
+            border: "1px solid rgba(59,158,255,0.3)",
+            color: "var(--color-accent)",
           }}
           onClick={() => { setOpen(true); setShowNotification(false); }}
         >
-          Ask me anything! 👋
+          <span className="inline-flex items-center gap-1.5">
+            Ask me anything! <Icon name="hand" className="w-3.5 h-3.5" />
+          </span>
         </div>
       )}
     </>

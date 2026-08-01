@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import content from "@/data/content.json";
 import ProjectCard from "./ProjectCard";
+import Icon from "@/components/ui/Icon";
 
 /* ============================================================
    FEATURED PROJECTS — Home page preview
@@ -29,7 +30,7 @@ export default function FeaturedProjects() {
   return (
     <section id="featured-projects" className="section-padding relative overflow-hidden">
       <div className="absolute left-1/2 top-0 w-96 h-px pointer-events-none"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(0,200,180,0.4), transparent)", transform: "translateX(-50%)" }} />
+        style={{ background: "linear-gradient(90deg, transparent, rgba(59,158,255,0.4), transparent)", transform: "translateX(-50%)" }} />
 
       <div className="container-max" ref={ref}>
         <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)" }}>
@@ -62,14 +63,14 @@ export default function FeaturedProjects() {
       {/* Lightbox */}
       {lightbox && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ backgroundColor: "rgba(4,13,26,0.96)" }} onClick={() => setLightbox(null)}>
+          style={{ backgroundColor: "rgba(5,7,10,0.96)" }} onClick={() => setLightbox(null)}>
           <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setLightbox(null)}
               className="absolute -top-10 right-0 text-white text-sm font-mono opacity-60 hover:opacity-100">
-              ESC to close ✕
+              ESC to close <Icon name="x" className="inline w-3.5 h-3.5" />
             </button>
             <img src={lightbox} alt="Project preview" className="w-full rounded-xl"
-              style={{ border: "1px solid rgba(0,200,180,0.2)" }} />
+              style={{ border: "1px solid rgba(59,158,255,0.2)" }} />
           </div>
         </div>
       )}

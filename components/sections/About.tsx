@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import content from "@/data/content.json";
+import Icon from "@/components/ui/Icon";
 
 /* ============================================================
    ABOUT SECTION
@@ -28,7 +29,7 @@ export default function About() {
       <div
         className="absolute -left-40 top-1/2 w-80 h-80 rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(0,200,180,0.06) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(59,158,255,0.06) 0%, transparent 70%)",
           transform: "translateY(-50%)",
         }}
       />
@@ -65,7 +66,7 @@ export default function About() {
                 style={{ color: "var(--color-text-secondary)" }}
               >
                 My background in Chemical Engineering gave me an obsession with{" "}
-                <span style={{ color: "#00c8b4" }}>precision and data integrity</span> — skills I now
+                <span style={{ color: "var(--color-accent)" }}>precision and data integrity</span> — skills I now
                 apply to SEO strategy, analytics dashboards, and process documentation.
               </p>
 
@@ -82,7 +83,7 @@ export default function About() {
                       transition: `all 0.5s ease ${i * 80}ms`,
                     }}
                   >
-                    <span className="text-2xl">{h.icon}</span>
+                    <Icon name={h.icon} className="w-6 h-6" style={{ color: "var(--color-accent)" }} />
                     <div>
                       <p
                         className="text-sm font-semibold"
@@ -109,7 +110,7 @@ export default function About() {
                 <div
                   className="absolute -inset-3 rounded-2xl"
                   style={{
-                    background: "linear-gradient(135deg, rgba(0,200,180,0.4), rgba(18,45,92,0.2), rgba(240,165,0,0.3))",
+                    background: "linear-gradient(135deg, rgba(59,158,255,0.4), var(--color-border), rgba(255,176,32,0.3))",
                     filter: "blur(8px)",
                   }}
                 />
@@ -118,7 +119,7 @@ export default function About() {
                 <div
                   className="relative w-72 h-80 lg:w-80 lg:h-96 rounded-2xl overflow-hidden"
                   style={{
-                    border: "1px solid rgba(0,200,180,0.2)",
+                    border: "1px solid rgba(59,158,255,0.2)",
                     backgroundColor: "var(--color-surface-2)",
                   }}
                 >
@@ -138,11 +139,11 @@ export default function About() {
                   {/* Overlay badge */}
                   <div
                     className="absolute bottom-4 left-4 right-4 glass rounded-xl px-4 py-3"
-                    style={{ border: "1px solid rgba(0,200,180,0.2)" }}
+                    style={{ border: "1px solid rgba(59,158,255,0.2)" }}
                   >
                     <p
                       className="text-xs font-mono uppercase tracking-wider mb-1"
-                      style={{ color: "#00c8b4" }}
+                      style={{ color: "var(--color-accent)" }}
                     >
                       Currently
                     </p>
@@ -159,7 +160,7 @@ export default function About() {
                 <div
                   className="absolute -right-6 top-8 glass rounded-xl px-4 py-3 text-center animate-float"
                   style={{
-                    border: "1px solid rgba(0,200,180,0.2)",
+                    border: "1px solid rgba(59,158,255,0.2)",
                     animationDelay: "0s",
                   }}
                 >
@@ -175,11 +176,11 @@ export default function About() {
                 <div
                   className="absolute -left-6 bottom-20 glass rounded-xl px-4 py-3 text-center animate-float"
                   style={{
-                    border: "1px solid rgba(240,165,0,0.2)",
+                    border: "1px solid rgba(255,176,32,0.2)",
                     animationDelay: "2s",
                   }}
                 >
-                  <p className="text-2xl font-bold" style={{ color: "#f0a500" }}>
+                  <p className="text-2xl font-bold" style={{ color: "#ffb020" }}>
                     4+
                   </p>
                   <p

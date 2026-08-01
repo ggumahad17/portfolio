@@ -10,43 +10,43 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Primary dark blue palette
+        // Primary near-black "console" palette, navy-blue undertone (#04101D)
         navy: {
-          950: "#040d1a",
-          900: "#071428",
-          850: "#0a1d3a",
-          800: "#0d2347",
-          700: "#122d5c",
-          600: "#173871",
-          500: "#1d4585",
-          400: "#2554a0",
-          300: "#3b6dbf",
-          200: "#6090d6",
-          100: "#9ab5e5",
-          50:  "#d0dff4",
+          950: "#051523",
+          900: "#071a2c",
+          850: "#0a2338",
+          800: "#0d2c44",
+          700: "#123a56",
+          600: "#184a6c",
+          500: "#235d84",
+          400: "#3574a0",
+          300: "#4f8fbd",
+          200: "#82b3d6",
+          100: "#b9d4ea",
+          50:  "#e3f0fa",
         },
-        // Accent: electric cyan-teal
+        // Accent: cool electric blue
         accent: {
-          500: "#00c8b4",
-          400: "#00dfc8",
-          300: "#33e8d6",
-          200: "#7ff0e4",
-          100: "#c0f8f3",
+          500: "#3b9eff",
+          400: "#4aa0e8",
+          300: "#8cc3f5",
+          200: "#b9dbf9",
+          100: "#ddeefc",
         },
-        // Gold accent for highlights
+        // Fuel-gauge amber — secondary accent (nod to energy/fuel-data work)
         gold: {
-          500: "#f0a500",
-          400: "#f5b833",
-          300: "#f9cc66",
+          500: "#ffb020",
+          400: "#ffc351",
+          300: "#ffd685",
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
       backgroundImage: {
-        "grid-navy": "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23122d5c' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+        "grid-navy": "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d2c44' fill-opacity='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
       },
       animation: {
         "fade-up": "fadeUp 0.6s ease-out forwards",
@@ -74,15 +74,15 @@ const config: Config = {
           "50%": { transform: "translateY(-10px)" },
         },
         glow: {
-          "0%": { boxShadow: "0 0 5px #00c8b4, 0 0 10px #00c8b4" },
-          "100%": { boxShadow: "0 0 20px #00c8b4, 0 0 40px #00c8b4, 0 0 60px #00c8b4" },
+          "0%": { boxShadow: "0 0 5px #3b9eff, 0 0 10px #3b9eff" },
+          "100%": { boxShadow: "0 0 20px #3b9eff, 0 0 40px #3b9eff, 0 0 60px #3b9eff" },
         },
       },
       boxShadow: {
-        "glow-accent": "0 0 30px rgba(0, 200, 180, 0.3)",
-        "glow-navy": "0 0 30px rgba(18, 45, 92, 0.5)",
-        "card": "0 4px 24px rgba(4, 13, 26, 0.4)",
-        "card-hover": "0 8px 40px rgba(0, 200, 180, 0.2)",
+        "glow-accent": "0 0 30px rgba(47, 143, 234, 0.3)",
+        "glow-navy": "0 0 30px rgba(19, 33, 24, 0.6)",
+        "card": "0 4px 24px rgba(4, 8, 6, 0.5)",
+        "card-hover": "0 8px 40px rgba(47, 143, 234, 0.18)",
       },
     },
   },

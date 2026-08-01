@@ -10,8 +10,8 @@ export default function Footer() {
     <footer
       className="pt-10 pb-8 px-4 md:px-8 lg:px-16"
       style={{
-        borderTop: "1px solid rgba(18,45,92,0.5)",
-        backgroundColor: "rgba(4,13,26,0.8)",
+        borderTop: "1px solid var(--color-border)",
+        backgroundColor: "var(--color-surface)",
       }}
     >
       <div className="container-max flex flex-col gap-8">
@@ -37,7 +37,7 @@ export default function Footer() {
                 href={link.href}
                 className="text-xs font-mono transition-colors duration-200"
                 style={{ color: "var(--color-text-muted)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#00c8b4")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-accent)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
               >
                 {link.label}
@@ -47,7 +47,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6"
-          style={{ borderTop: "1px solid rgba(18,45,92,0.3)" }}>
+          style={{ borderTop: "1px solid var(--color-border)" }}>
           <p
             className="text-xs font-mono text-center"
             style={{ color: "var(--color-text-muted)" }}
@@ -59,7 +59,7 @@ export default function Footer() {
             href={`mailto:${content.contact.email}`}
             className="text-xs font-mono transition-colors duration-200"
             style={{ color: "var(--color-text-muted)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#00c8b4")}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-accent)")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-text-muted)")}
           >
             {content.contact.email}

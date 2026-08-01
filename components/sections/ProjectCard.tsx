@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import content from "@/data/content.json";
+import Icon from "@/components/ui/Icon";
 
 export type Project = typeof content.projects[number];
 
@@ -29,7 +30,7 @@ export default function ProjectCard({
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(30px)",
         transition: `all 0.5s ease ${index * 100}ms`,
-        borderColor: hovered ? "rgba(0,200,180,0.35)" : "rgba(18,45,92,0.6)",
+        borderColor: hovered ? "rgba(59,158,255,0.35)" : "var(--color-border)",
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -38,7 +39,7 @@ export default function ProjectCard({
       {project.image && !imgError ? (
         <div
           className="relative w-full overflow-hidden cursor-zoom-in"
-          style={{ height: "180px", backgroundColor: "rgba(7,20,40,0.8)" }}
+          style={{ height: "180px", backgroundColor: "var(--color-overlay-soft)" }}
           onClick={() => project.image && onImageClick(project.image)}
         >
           <img
@@ -55,23 +56,23 @@ export default function ProjectCard({
           />
           <div
             className="absolute inset-0 flex items-center justify-center transition-opacity duration-300"
-            style={{ backgroundColor: "rgba(0,200,180,0.12)", opacity: hovered ? 1 : 0 }}
+            style={{ backgroundColor: "rgba(59,158,255,0.12)", opacity: hovered ? 1 : 0 }}
           >
             <span
               className="text-xs font-mono px-3 py-1.5 rounded-full"
-              style={{ backgroundColor: "rgba(4,13,26,0.85)", border: "1px solid rgba(0,200,180,0.4)", color: "#00c8b4" }}
+              style={{ backgroundColor: "rgba(5,7,10,0.85)", border: "1px solid rgba(59,158,255,0.4)", color: "var(--color-accent)" }}
             >
-              🔍 Click to enlarge
+              <Icon name="zoom-in" className="inline w-3.5 h-3.5 mr-1 -mt-0.5" /> Click to enlarge
             </span>
           </div>
         </div>
       ) : (
         <div
           className="w-full flex items-center justify-center"
-          style={{ height: "80px", background: "linear-gradient(135deg, rgba(7,20,40,0.8), rgba(18,45,92,0.3))", borderBottom: "1px solid rgba(18,45,92,0.4)" }}
+          style={{ height: "80px", background: "linear-gradient(135deg, var(--color-overlay-soft), var(--color-section-alt))", borderBottom: "1px solid var(--color-border)" }}
         >
-          <span className="text-3xl opacity-30">
-            {project.category === "SEO" ? "🔍" : project.category === "Data" ? "📊" : "🎨"}
+          <span className="opacity-30">
+            <Icon name={project.category === "SEO" ? "search" : project.category === "Data" ? "bar-chart" : "palette"} className="w-8 h-8" />
           </span>
         </div>
       )}
@@ -84,7 +85,7 @@ export default function ProjectCard({
               key={i}
               onClick={() => onImageClick(img)}
               className="flex-1 overflow-hidden rounded-md transition-all duration-200 hover:opacity-80 hover:ring-1"
-              style={{ height: "48px", border: "1px solid rgba(18,45,92,0.6)" }}
+              style={{ height: "48px", border: "1px solid var(--color-border)" }}
             >
               <img src={img} alt={`Gallery ${i + 1}`} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </button>
@@ -98,23 +99,23 @@ export default function ProjectCard({
           {project.featured && (
             <span
               className="text-xs font-mono px-2 py-0.5 rounded-full"
-              style={{ backgroundColor: "rgba(240,165,0,0.1)", border: "1px solid rgba(240,165,0,0.3)", color: "#f0a500" }}
+              style={{ backgroundColor: "rgba(255,176,32,0.12)", border: "1px solid rgba(255,176,32,0.35)", color: "#ffb020" }}
             >
               Featured
             </span>
           )}
           <span
             className="text-xs font-mono px-2 py-0.5 rounded-full"
-            style={{ backgroundColor: "rgba(0,200,180,0.08)", border: "1px solid rgba(0,200,180,0.2)", color: "#00c8b4" }}
+            style={{ backgroundColor: "rgba(59,158,255,0.1)", border: "1px solid rgba(59,158,255,0.2)", color: "var(--color-accent)" }}
           >
             {project.category}
           </span>
           {gallery && gallery.length > 1 && (
             <span
               className="text-xs font-mono px-2 py-0.5 rounded-full"
-              style={{ backgroundColor: "rgba(96,144,214,0.1)", border: "1px solid rgba(96,144,214,0.2)", color: "#6090d6" }}
+              style={{ backgroundColor: "rgba(147,168,156,0.1)", border: "1px solid rgba(147,168,156,0.2)", color: "var(--color-text-secondary)" }}
             >
-              📸 {gallery.length} screenshots
+              <Icon name="images" className="inline w-3.5 h-3.5 mr-1 -mt-0.5" /> {gallery.length} screenshots
             </span>
           )}
         </div>
@@ -124,7 +125,7 @@ export default function ProjectCard({
             <Link href={`/projects/${(project as any).slug}`}>
               <h3
                 className="text-lg font-display font-semibold mb-2 transition-colors duration-300"
-                style={{ color: hovered ? "#00c8b4" : "var(--color-text-primary)" }}
+                style={{ color: hovered ? "var(--color-accent)" : "var(--color-text-primary)" }}
               >
                 {project.title}
               </h3>
@@ -132,7 +133,7 @@ export default function ProjectCard({
           ) : (
             <h3
               className="text-lg font-display font-semibold mb-2 transition-colors duration-300"
-              style={{ color: hovered ? "#00c8b4" : "var(--color-text-primary)" }}
+              style={{ color: hovered ? "var(--color-accent)" : "var(--color-text-primary)" }}
             >
               {project.title}
             </h3>
@@ -147,7 +148,7 @@ export default function ProjectCard({
             <span
               key={tag}
               className="text-xs font-mono px-2.5 py-1 rounded-md"
-              style={{ backgroundColor: "rgba(18,45,92,0.6)", border: "1px solid rgba(18,45,92,0.8)", color: "var(--color-text-secondary)" }}
+              style={{ backgroundColor: "var(--color-chip-bg)", border: "1px solid var(--color-chip-border)", color: "var(--color-text-secondary)" }}
             >
               {tag}
             </span>
@@ -160,9 +161,9 @@ export default function ProjectCard({
             <Link
               href={`/projects/${(project as any).slug}`}
               className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:opacity-80"
-              style={{ backgroundColor: "rgba(240,165,0,0.1)", border: "1px solid rgba(240,165,0,0.3)", color: "#f0a500" }}
+              style={{ backgroundColor: "rgba(255,176,32,0.12)", border: "1px solid rgba(255,176,32,0.35)", color: "#ffb020" }}
             >
-              📄 View Case Study
+              <Icon name="file-text" className="inline w-3.5 h-3.5 mr-1 -mt-0.5" /> View Case Study
             </Link>
           )}
           {project.live && (
@@ -171,7 +172,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:opacity-80"
-              style={{ backgroundColor: "rgba(0,200,180,0.1)", border: "1px solid rgba(0,200,180,0.3)", color: "#00c8b4" }}
+              style={{ backgroundColor: "rgba(59,158,255,0.1)", border: "1px solid rgba(59,158,255,0.3)", color: "var(--color-accent)" }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-82.34,82.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"/></svg>
               View Live
@@ -182,7 +183,7 @@ export default function ProjectCard({
               href={project.download}
               download
               className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:opacity-80"
-              style={{ backgroundColor: "rgba(240,165,0,0.1)", border: "1px solid rgba(240,165,0,0.3)", color: "#f0a500" }}
+              style={{ backgroundColor: "rgba(255,176,32,0.12)", border: "1px solid rgba(255,176,32,0.35)", color: "#ffb020" }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 256 256"><path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z"/></svg>
               {project.downloadLabel || "Download File"}
@@ -194,7 +195,7 @@ export default function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-2 rounded-lg transition-all duration-200 hover:opacity-80"
-              style={{ backgroundColor: "rgba(96,144,214,0.1)", border: "1px solid rgba(96,144,214,0.3)", color: "#6090d6" }}
+              style={{ backgroundColor: "var(--color-chip-bg)", border: "1px solid rgba(59,158,255,0.3)", color: "var(--color-accent)" }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 256 256"><path d="M224,104a8,8,0,0,1-16,0V59.32l-82.34,82.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z"/></svg>
               {project.externalLabel || "View External"}

@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
 import content from "@/data/content.json";
-import postsData from "@/data/posts.json";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = content.site.url;
   const now = new Date();
 
-  const staticRoutes = ["/", "/about", "/projects", "/skills", "/blog", "/contact"].map((path) => ({
+  const staticRoutes = ["/", "/about", "/projects", "/skills", "/certificates", "/contact"].map((path) => ({
     url: `${base}${path}`,
     lastModified: now,
   }));
@@ -18,11 +17,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
     }));
 
-  const posts = (postsData.posts as Array<{ slug: string }>) || [];
-  const blogRoutes = posts.map((p) => ({
-    url: `${base}/blog/${p.slug}`,
-    lastModified: now,
-  }));
-
-  return [...staticRoutes, ...projectRoutes, ...blogRoutes];
+  return [...staticRoutes, ...projectRoutes];
 }

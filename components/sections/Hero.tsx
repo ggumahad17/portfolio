@@ -1,203 +1,81 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import Link from "next/link";
 import content from "@/data/content.json";
+import TerminalWidget from "./TerminalWidget";
 
 /* ============================================================
-   HERO SECTION
-   Content editable in /data/content.json → hero
+   HERO — near-black terminal aesthetic
+   Left: eyebrow, headline, subhead, CTAs, stat row (real numbers
+   pulled from content.json, not invented).
+   Right: TerminalWidget inside a laptop mockup — the signature element.
+   Background motion comes from the global AmbientBackground
+   (mounted in SiteChrome) — Hero just adds a subtle grid texture
+   and top hairline on top of it.
    ============================================================ */
 export default function Hero() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  // Animated particle field
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animId: number;
-    const particles: Array<{
-      x: number; y: number; vx: number; vy: number; size: number; opacity: number;
-    }> = [];
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    for (let i = 0; i < 60; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.1,
-      });
-    }
-
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 200, 180, ${p.opacity})`;
-        ctx.fill();
-      });
-
-      // Draw connecting lines
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(18, 45, 92, ${0.4 * (1 - dist / 120)})`;
-            ctx.lineWidth = 1;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-
-      animId = requestAnimationFrame(draw);
-    };
-    draw();
-
-    return () => {
-      cancelAnimationFrame(animId);
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
-  const { hero } = content;
+  const stats = [
+    { value: "10", label: "Projects shipped" },
+    { value: "4", label: "Skill domains" },
+    { value: "4", label: "SEO & data roles" },
+    { value: "Cebu, PH", label: "Based in" },
+  ];
 
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Particle canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 pointer-events-none z-0"
-        aria-hidden="true"
-      />
-
-      {/* Radial glow */}
+    <section className="relative overflow-hidden border-b" style={{ borderColor: "var(--color-border)" }}>
       <div
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0,200,180,0.07) 0%, transparent 70%)",
-        }}
+        className="absolute inset-x-0 top-0 h-px"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(30,120,210,0.5), transparent)" }}
       />
 
-      <div className="relative z-10 container-max section-padding text-center">
-        {/* Status badge */}
-        <div
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-widest mb-8 border"
-          style={{
-            backgroundColor: "rgba(0,200,180,0.08)",
-            borderColor: "rgba(0,200,180,0.25)",
-            color: "#00c8b4",
-            animationDelay: "0s",
-          }}
-        >
-          <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse-slow" />
-          Available for Opportunities
-        </div>
+      <div className="container-max relative z-10 px-4 md:px-8 lg:px-16 pt-28 pb-16 md:pt-36 md:pb-24">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-10 items-center">
+          <div className="animate-fade-up">
+            <div className="section-tag w-fit">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-500 animate-pulse" />
+              <span>Available for SEO & Data roles</span>
+            </div>
 
-        {/* Name */}
-        <h1
-          className="font-display font-bold mb-4"
-          style={{
-            fontSize: "clamp(2.5rem, 8vw, 6rem)",
-            lineHeight: 1.05,
-            letterSpacing: "-0.03em",
-            color: "var(--color-text-primary)",
-          }}
-        >
-          {hero.name.split(" ").map((word, i) => (
-            <span
-              key={i}
-              className={i === 1 ? "text-gradient" : ""}
-              style={{ display: "inline-block", marginRight: "0.25em" }}
-            >
-              {word}
-            </span>
-          ))}
-        </h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-black mt-5 mb-5 leading-[1.08]">
+              Turning raw data into <span className="text-gradient">rankings</span>
+              <br />
+              and insight into <span className="text-gradient">action</span>
+            </h1>
 
-        {/* Title */}
-        <div
-          className="flex items-center justify-center gap-3 mb-6"
-          style={{ color: "var(--color-text-secondary)" }}
-        >
-          {hero.title.split(" · ").map((t, i, arr) => (
-            <span key={i} className="flex items-center gap-3">
-              <span className="text-lg md:text-xl font-medium">{t}</span>
-              {i < arr.length - 1 && (
-                <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "#00c8b4" }} />
-              )}
-            </span>
-          ))}
-        </div>
+            <p className="text-base md:text-lg max-w-lg mb-8" style={{ color: "var(--color-text-secondary)" }}>
+              {content.hero.name} — {content.hero.title}. {content.about.bio.split(".")[0]}.
+            </p>
 
-        {/* Tagline */}
-        <p
-          className="text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed"
-          style={{ color: "var(--color-text-secondary)" }}
-        >
-          {hero.tagline}
-        </p>
+            <div className="flex flex-wrap items-center gap-4 mb-12">
+              <Link href={content.hero.cta.primary.href} className="btn-primary">
+                {content.hero.cta.primary.label}
+              </Link>
+              <Link href={content.hero.cta.secondary.href} className="btn-outline">
+                {content.hero.cta.secondary.label}
+              </Link>
+              <a
+                href={content.hero.cta.resume.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-mono text-secondary hover:text-accent-500 transition-colors underline underline-offset-4 decoration-dotted"
+              >
+                {content.hero.cta.resume.label} ↓
+              </a>
+            </div>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 flex-wrap">
-          <a href={hero.cta.primary.href} className="btn-primary text-base px-8 py-4">
-            {hero.cta.primary.label}
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256">
-              <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z" />
-            </svg>
-          </a>
-          <a href={hero.cta.secondary.href} className="btn-outline text-base px-8 py-4">
-            {hero.cta.secondary.label}
-          </a>
-          <a href={hero.cta.resume.href} download className="btn-outline text-base px-8 py-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 256 256">
-              <path d="M224,152v56a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V152a8,8,0,0,1,16,0v56H208V152a8,8,0,0,1,16,0Zm-101.66,5.66a8,8,0,0,0,11.32,0l40-40a8,8,0,0,0-11.32-11.32L136,132.69V40a8,8,0,0,0-16,0v92.69L93.66,106.34a8,8,0,0,0-11.32,11.32Z" />
-            </svg>
-            {hero.cta.resume.label}
-          </a>
-        </div>
+            <div className="grid grid-cols-4 gap-4 max-w-md">
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <div className="font-display font-bold text-xl md:text-2xl text-primary">{s.value}</div>
+                  <div className="text-[11px] md:text-xs font-mono uppercase tracking-wide text-muted mt-1">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        {/* Scroll indicator */}
-        <div className="flex flex-col items-center gap-2 animate-float">
-          <span
-            className="text-xs font-mono uppercase tracking-widest"
-            style={{ color: "var(--color-text-muted)" }}
-          >
-            Scroll
-          </span>
-          <div
-            className="w-5 h-8 rounded-full border-2 flex items-start justify-center p-1"
-            style={{ borderColor: "rgba(0,200,180,0.3)" }}
-          >
-            <div
-              className="w-1 h-2 rounded-full animate-bounce"
-              style={{ backgroundColor: "#00c8b4" }}
-            />
+          <div className="flex justify-center lg:justify-end animate-fade-in" style={{ animationDelay: "200ms" }}>
+            <TerminalWidget />
           </div>
         </div>
       </div>

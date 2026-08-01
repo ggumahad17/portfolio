@@ -46,6 +46,9 @@ export const metadata: Metadata = {
   creator: "Gerald Gumahad",
   metadataBase: new URL(content.site.url),
   alternates: { canonical: "/" },
+  verification: {
+    google: "z2XppiF_DFFRm1PQmXDSJXhH9z7p_8b6c3m2XGYTT3s",
+  },
   openGraph: {
     title: content.site.title,
     description: content.site.description,
